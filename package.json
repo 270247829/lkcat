@@ -1,6 +1,6 @@
 {
   "name": "lkcat",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "title": "lkcat",
   "description": "兰科网络 vue.js UI框架",
   "homepage": "http://www.liugongrui.com",
@@ -32,12 +32,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/qq270247829"
+    "url": "https://github.com/270247829/lkcat"
   },
   "author": "Rui",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/qq270247829/issues"
+    "url": "https://github.com/270247829/lkcat/issues"
   },
   "dependencies": {
     "async-validator": "^1.8.2",
