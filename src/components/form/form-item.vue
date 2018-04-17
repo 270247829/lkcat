@@ -28,7 +28,7 @@
             if (key in tempObj) {
                 tempObj = tempObj[key];
             } else {
-                throw new Error('[lkCat warn]: please transfer a valid prop path to form item!');
+                throw new Error('[LKCat warn]: please transfer a valid prop path to form item!');
             }
         }
         return {
@@ -92,6 +92,7 @@
                 this.validateState = val;
             }
         },
+        inject: ['form'],
         computed: {
             classes () {
                 return [
@@ -103,13 +104,13 @@
                     }
                 ];
             },
-            form() {
-                let parent = this.$parent;
-                while (parent.$options.name !== 'iForm') {
-                    parent = parent.$parent;
-                }
-                return parent;
-            },
+            // form() {
+            //    let parent = this.$parent;
+            //    while (parent.$options.name !== 'iForm') {
+            //        parent = parent.$parent;
+            //    }
+            //    return parent;
+            // },
             fieldValue: {
                 cache: false,
                 get() {

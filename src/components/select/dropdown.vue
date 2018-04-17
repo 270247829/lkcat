@@ -21,7 +21,8 @@
         data () {
             return {
                 popper: null,
-                width: ''
+                width: '',
+                popperStatus: false
             };
         },
         computed: {
@@ -37,6 +38,7 @@
                 if (this.popper) {
                     this.$nextTick(() => {
                         this.popper.update();
+                        this.popperStatus = true;
                     });
                 } else {
                     this.$nextTick(() => {
@@ -44,8 +46,18 @@
                             placement: this.placement,
                             modifiers: {
                                 computeStyle:{
-                                    gpuAcceleration: false,
+                                    gpuAcceleration: false
+                                },
+                                preventOverflow :{
+                                    boundariesElement: 'body'
                                 }
+                            },
+                            onCreate:()=>{
+                                this.resetTransformOrigin();
+                                this.$nextTick(this.popper.update());
+                            },
+                            onUpdate:()=>{
+                                this.resetTransformOrigin();
                             }
                         });
                     });
@@ -58,12 +70,17 @@
             destroy () {
                 if (this.popper) {
                     setTimeout(() => {
-                        if (this.popper) {
+                        if (this.popper && !this.popperStatus) {
                             this.popper.destroy();
                             this.popper = null;
                         }
+                        this.popperStatus = false;
                     }, 300);
                 }
+            },
+            resetTransformOrigin() {
+                let placement = this.popper.popper.getAttribute('x-placement').split('-')[0];
+                this.popper.popper.style.transformOrigin = placement==='bottom'?'center top':'center bottom';
             }
         },
         created () {

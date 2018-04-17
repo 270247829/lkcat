@@ -40,6 +40,9 @@
                 default: 'off'
             }
         },
+        provide() {
+            return { form : this };
+        },
         data () {
             return {
                 fields: []
@@ -84,7 +87,7 @@
             },
             validateField(prop, cb) {
                 const field = this.fields.filter(field => field.prop === prop)[0];
-                if (!field) { throw new Error('[lkCat warn]: must call validateField with valid prop string!'); }
+                if (!field) { throw new Error('[LKCat warn]: must call validateField with valid prop string!'); }
 
                 field.validate('', cb);
             }

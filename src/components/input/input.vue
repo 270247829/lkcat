@@ -2,7 +2,7 @@
     <div :class="wrapClasses">
         <template v-if="type !== 'textarea'">
             <div :class="[prefixCls + '-group-prepend']" v-if="prepend" v-show="slotReady"><slot name="prepend"></slot></div>
-            <i class="lkui-icon" :class="['lkui-icon-ios-close', prefixCls + '-icon', prefixCls + '-icon-clear' , prefixCls + '-icon-normal']" v-if="clearable" @click="handleClear"></i>
+            <i class="lkui-icon" :class="['lkui-icon-ios-close', prefixCls + '-icon', prefixCls + '-icon-clear' , prefixCls + '-icon-normal']" v-if="clearable && currentValue" @click="handleClear"></i>
             <i class="lkui-icon" :class="['lkui-icon-' + icon, prefixCls + '-icon', prefixCls + '-icon-normal']" v-else-if="icon" @click="handleIconClick"></i>
             <transition name="fade">
                 <i class="lkui-icon lkui-icon-load-c lkui-load-loop" :class="[prefixCls + '-icon', prefixCls + '-icon-validate']" v-if="!icon"></i>
