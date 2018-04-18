@@ -35,7 +35,7 @@
                 <Icon type="arrow-down-b" :class="[prefixCls + '-arrow']" v-if="!remote"></Icon>
             </slot>
         </div>
-        <transition name="transition-drop">
+        <transition :name="transitionName">
             <Drop
                 :class="dropdownCls"
                 v-show="dropVisible"
