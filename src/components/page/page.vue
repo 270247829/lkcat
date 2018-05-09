@@ -26,7 +26,7 @@
         </li>
     </ul>
     <!--不显示尾页-->
-    <ul :class="wrapClasses" :style="styles" v-if="noend">
+    <ul :class="wrapClasses" :style="styles" v-else-if="noend">
         <span :class="[prefixCls + '-total']" v-if="showTotal">
             <slot>{{ t('i.page.total') }} {{ total }} <template v-if="total <= 1">{{ t('i.page.item') }}</template><template v-else>{{ t('i.page.items') }}</template></slot>
         </span>
