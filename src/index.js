@@ -51,6 +51,7 @@ import Upload from './components/upload';
 import {Row, Col} from './components/grid';
 import {Select, Option, OptionGroup} from './components/select';
 import locale from './locale/index';
+import List from './components/list';
 
 const components = {
     Affix,
@@ -120,7 +121,8 @@ const components = {
     Tooltip,
     Transfer,
     Tree,
-    Upload
+    Upload,
+    List
 };
 
 const lkcat = {

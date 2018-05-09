@@ -1,0 +1,19 @@
+@list-prefix-cls: ~"@{css-prefix}list";
+.@{list-prefix-cls}{
+    padding:10px;
+    list-style:none;
+
+    &li {
+       border-bottom:1px solid #ddd;
+       padding:4px 10px;
+       list-style:none;
+       p{
+          padding:5px 0px;
+       }
+    }
+
+    &li:last-child{
+       border-bottom:none;
+    }
+
+}
