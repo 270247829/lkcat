@@ -174,9 +174,9 @@
                 <p>三山半落青天外，二水中分白鹭洲。</p>
                 <p>总为浮云能蔽日，长安不见使人愁。</p>
             </article>
-            <Spin size="large" fix v-if="spinShow" type='two'>
-                <!--<Icon type="load-c" size=18 class="demo-spin-icon-load"></Icon>-->
-                <!--<div>Loading</div>-->
+            <Spin size="large" fix v-if="spinShow" >
+                <!-- <Icon type="load-c" size=18 class="demo-spin-icon-load"></Icon>
+                <div>Loading</div> -->
             </Spin>
         </div>
         <br>
