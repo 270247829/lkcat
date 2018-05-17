@@ -174,13 +174,13 @@
                 <p>三山半落青天外，二水中分白鹭洲。</p>
                 <p>总为浮云能蔽日，长安不见使人愁。</p>
             </article>
-            <Spin size="large" fix v-if="spinShow">
+            <Spin size="large" fix v-if="spinShow" type='two'>
                 <!--<Icon type="load-c" size=18 class="demo-spin-icon-load"></Icon>-->
                 <!--<div>Loading</div>-->
             </Spin>
         </div>
         <br>
-        切换显示状态：<i-switch @on-change="spinShow = !spinShow"></i-switch>
+        切换显示状态：<i-switch @on-change="spinShow = !spinShow" ></i-switch>
         <Button @click="show">show</Button>
         <Button @click="hide">hide</Button>
     </div>
