@@ -1,14 +1,16 @@
 <template>
-    <List style="width:350px" :data="movieList">
-            fdfghh
-            <div v-for="(item,index) in movieList" :slot="index">
-                <a :href="item.url" target="_blank">{{ item.name }}</a>
-                <span>
-                    <!--<Icon type="ios-star" v-for="n in 4"></Icon><Icon type="ios-star" v-if="item.rate >= 9.5"></Icon><Icon type="ios-star-half" v-else></Icon>-->
-                    {{ item.rate }}
-                </span>
+    <List style="width:350px" :data="movieList" >
+             <div slot-scope="{item}">
+                <div class="item-left">
+                       <img slot="pic" :src="item.cover"/>
+                </div>
+                <div class="item-right">
+                    <div class="headtitle"><p slot="title">{{item.title}}</p></div>
+                     <div class="content"><p slot="content">{{item.url}}</p></div>
+                     <div slot="footer">评分：34</div>
+                </div>
             </div>
-        </ul>
+
     </List>
 </template>
 <script>
@@ -16,58 +18,15 @@
         data () {
             return {
                 limitNum: 5,
+                imageUrl:false,
                 limitFrom: 0,
                 movieList: [
-                    {
-                        name: '肖申克的救赎',
-                        url: 'https://movie.douban.com/subject/1292052/',
-                        rate: 9.6
-                    },
-                    {
-                        name: '这个杀手不太冷',
-                        url: 'https://movie.douban.com/subject/1295644/',
-                        rate: 9.4
-                    },
-                    {
-                        name: '霸王别姬',
-                        url: 'https://movie.douban.com/subject/1291546/',
-                        rate: 9.5
-                    },
-                    {
-                        name: '阿甘正传',
-                        url: 'https://movie.douban.com/subject/1292720/',
-                        rate: 9.4
-                    },
-                    {
-                        name: '美丽人生',
-                        url: 'https://movie.douban.com/subject/1292063/',
-                        rate: 9.5
-                    },
-                    {
-                        name: '千与千寻',
-                        url: 'https://movie.douban.com/subject/1291561/',
-                        rate: 9.2
-                    },
-                    {
-                        name: '辛德勒的名单',
-                        url: 'https://movie.douban.com/subject/1295124/',
-                        rate: 9.4
-                    },
-                    {
-                        name: '海上钢琴师',
-                        url: 'https://movie.douban.com/subject/1292001/',
-                        rate: 9.2
-                    },
-                    {
-                        name: '机器人总动员',
-                        url: 'https://movie.douban.com/subject/2131459/',
-                        rate: 9.3
-                    },
-                    {
-                        name: '盗梦空间',
-                        url: 'https://movie.douban.com/subject/3541415/',
-                        rate: 9.2
-                    }
+                   {cover:"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2513360824.jpg",title:"昆池岩",url:"https://movie.douban.com/subject/26945085/"},
+                   {cover:"https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2514384737.jpg",title:"现在去见你",url:"https://movie.douban.com/subject/27018285/"},
+                   {cover:"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2520212236.jpg",title:"疯狂婚礼周",url:"https://movie.douban.com/subject/27031084/"},
+                   {cover:"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2518132366.jpg",title:"血观音",url:"https://movie.douban.com/subject/27113517/"},
+                   {cover:"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg",title:"红海行动",url:"https://movie.douban.com/subject/26861685/"},
+                   {cover:"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2512123434.jpg",title:"黑豹",url:"https://movie.douban.com/subject/6390825/"},
                 ]
             }
         },

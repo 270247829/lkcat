@@ -4,16 +4,44 @@
     list-style:none;
 
     li {
-       border-bottom:1px solid #ddd;
+       border-radius:2px;
        padding:4px 10px;
        list-style:none;
-       p{
+       overflow: hidden;
+       
+       margin:10px auto;
+       border:1px solid #dfdfdf;
+       .item-left{
+         float:left;
+         width:20%;
+         img{
+          width:45px;
+          height:45px;
+          border-radius: 5px;
+          display: inline-block;
+          margin-right:10px;
+         }
+       }
+       .item-right{
+         float:left;
+         width:80%;
+         .headtitle{
           padding:5px 0px;
+          p{
+            color:#2e82df;
+          }
+         }
+         .content{
+           min-height:60px;
+         }
        }
     }
 
     li:last-child{
        border-bottom:none;
     }
+    li:hover{
+      box-shadow:1px 2px 1px rgba(0,0,0,.15);
+    };
 
 }
