@@ -122,7 +122,8 @@ const components = {
     Transfer,
     Tree,
     Upload,
-    List
+    List,
+    ListItem:List.Item
 };
 
 const lkcat = {

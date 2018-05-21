@@ -1,37 +1,15 @@
 <template>
-        <ul :class="classes">
-            <li class="" v-for="(item,index) in data" :key="index">
-              <slot :item="item">
-              <slot name="left">
-                  <div  class="item-left" v-if="imageUrl">
-                      <slot name="pic">
-                            <img class="imageStyle"  :src="url"/>
-                      </slot>
-                  </div>
-              </slot>
-              <slot name="right">
-                  <div class="item-right" ref="itemRight">
-                   <div class="headtitle" v-if="showHead">
-                    <slot name="title">
-                        <p v-if="title">
-                            {{title}}
-                        </p>
-                    </slot>
-                  </div>
-                  <div class="content" v-if="showContent">
-                      <slot name="content">
-                          <p v-if="content">
-                              {{content}}
-                          </p>
-                      </slot>
-                  </div>
-                  <slot name="footer"></slot>
-              </div>
-              </slot>
-               
-              </slot>
-            </li>   
-        </ul>
+        <div :class="classes">
+            <div :class="headerClass" v-if="showHeader">
+                <slot name="header" ></slot>
+            </div>
+            <div :class="itemClass" v-for="(item,index) in data" :key="index">
+                <slot :item="item" :$index="index"></slot>
+            </div>
+            <div :class="footerClass" v-if="showFooter">
+                <slot name="footer" ></slot>
+            </div>
+        </div>
 </template>
 <script>
     const prefixCls = 'lkui-list';
@@ -59,31 +37,40 @@
             },
             content:{
                 type:String,
-            },
-            imageUrl:{
-                type:Boolean,
-                default:true
             }
         },
         data () {
             return {
-               showHead:true,
+               showHeader:true,
                showContent:true,
+               showFooter:true
             };
         },
         computed: {
             classes () {
-                return `${prefixCls}-con`;
+                return `${prefixCls}`;
+            },
+            itemClass () {
+                return `${prefixCls}`+'-item';
+            },
+            headerClass () {
+                return `${prefixCls}`+'-header';
+            },
+            footerClass () {
+                return `${prefixCls}`+'-footer';
             }
-
-            
         },
         mounted(){
-              this.$nextTick(() => {
-                this.initLeft();
-              })
+            if (this.$slots.header === undefined) {
+                this.showHeader = false;
+            }   
+            if (this.$slots.footer === undefined) {
+                this.showFooter = false;
+            }               
+            this.$nextTick(() => {
+            this.initLeft();
+            })
               
-           
         },
 
         methods:{

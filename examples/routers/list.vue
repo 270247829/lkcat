@@ -1,22 +1,22 @@
 <template>
     <List style="width:350px" :data="movieList" >
-             <div slot-scope="{item}">
-                <div class="item-left">
-                       <img slot="pic" :src="item.cover"/>
-                </div>
-                <div class="item-right">
-                    <div class="headtitle"><p slot="title">{{item.title}}</p></div>
-                     <div class="content"><p slot="content">{{item.url}}</p></div>
-                     <div slot="footer">评分：34</div>
-                </div>
-            </div>
-
+        <div slot="header" >Header</div>
+        <ListItem slot-scope="scope" >
+            <p >{{scope.item.url}}</p>
+        </ListItem>
+        <div slot="footer">Footer</div>
+        <!-- <ListItem slot-scope="scope" :pic="scope.item.cover">
+            <p slot="title">{{scope.item.title}}</p>
+            <p >{{scope.item.url}}</p>
+            <p slot="footer">索引：{{scope.$index}}</p>
+        </ListItem> -->
     </List>
 </template>
 <script>
     export default {
         data () {
             return {
+                scope:{},
                 limitNum: 5,
                 imageUrl:false,
                 limitFrom: 0,
