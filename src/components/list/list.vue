@@ -3,11 +3,27 @@
             <div :class="headerClass" v-if="showHeader">
                 <slot name="header" ></slot>
             </div>
-            <div :class="itemClass" v-for="(item,index) in data" :key="index">
-                <slot :item="item" :$index="index"></slot>
-            </div>
+            <template v-if="type!='card'">
+                <div :class="itemClass" v-for="(item,index) in currentData" :key="index">
+                    <slot :item="item" :$index="index"></slot>
+                </div>
+            </template>
+            <template v-else>
+                <Row :gutter="grid.gutter">
+                    <Col :span="24/grid.column"  v-for="(item,index) in currentData" :key="index">
+                        <div :class="itemClass" >
+                            <Card>
+                            <slot :item="item" :$index="index"></slot>
+                            </Card>
+                        </div>
+                    </Col>
+                </Row>
+            </template>        
             <div :class="footerClass" v-if="showFooter">
                 <slot name="footer" ></slot>
+            </div>
+            <div :class="pageClass" v-if="showPagination">
+                <Page :total="pagination.total" :current="pagination.current" :page-size="pagination.pageSize" @on-change="changePage"></Page>
             </div>
         </div>
 </template>
@@ -27,7 +43,7 @@
                 type: Object,
                 default () {
                     return {};
-                }  
+                }
             },
             title:{
                 type:String,
@@ -36,19 +52,39 @@
                type:String 
             },
             content:{
+                type:String
+            },
+            type:{
                 type:String,
+                default () {
+                    return '';
+                } 
+            },
+            grid:{
+                type:Object,
+                default () {
+                    return {column:4,gutter:16};
+                }
+            },
+            pagination:{
+                type:Object,
+                default () {
+                    return null
+                }
             }
         },
         data () {
             return {
-               showHeader:true,
-               showContent:true,
-               showFooter:true
+               showContent:true
             };
         },
         computed: {
             classes () {
-                return `${prefixCls}`;
+                return [`${prefixCls}`,
+                    {
+                        [`${prefixCls}-card`]: this.type=='card'
+                    }
+                ]
             },
             itemClass () {
                 return `${prefixCls}`+'-item';
@@ -58,31 +94,33 @@
             },
             footerClass () {
                 return `${prefixCls}`+'-footer';
+            },
+            pageClass () {
+                return `${prefixCls}`+'-page';
+            },
+            showHeader(){
+                return !this.$slots.header === undefined;
+            },
+            showFooter(){
+                return !this.$slots.footer === undefined;
+            },
+            showPagination(){
+                return this.pagination != null;
+            },
+            currentData(){
+                if(this.pagination==null){
+                    return this.data;
+                }
+                return this.data.slice(this.pagination.pageSize*(this.pagination.current-1),this.pagination.pageSize*this.pagination.current);
             }
         },
         mounted(){
-            if (this.$slots.header === undefined) {
-                this.showHeader = false;
-            }   
-            if (this.$slots.footer === undefined) {
-                this.showFooter = false;
-            }               
-            this.$nextTick(() => {
-            this.initLeft();
-            })
-              
-        },
 
+        },
         methods:{
-           initLeft(){
-              if(!this.imageUrl){
-                 //console.log(this.$refs.itemRight);
-                 for(var i=0;i<this.$refs.itemRight.length;i++){
-                       this.$refs.itemRight[i].style.width='100%'; 
-                 }
-                 
-              }
-           }
+            changePage(current){
+                this.pagination.current = current;
+            }
         }
         
     };

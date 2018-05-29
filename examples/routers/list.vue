@@ -1,16 +1,27 @@
 <template>
-    <List style="width:350px" :data="movieList" >
+<div>
+    <!-- <List style="width:350px" :data="movieList" > -->
+    <List  :data="movieList" type="card" :grid="grid" :pagination="pagination">
+        <!-- <div slot="header" >Header</div> -->
+        <ListItem slot-scope="scope"  >
+            <img slot="avatar" :src="scope.item.cover" style="width: 50px;height: 60px;"/>
+            <h4 slot="title">{{scope.item.title}}</h4>
+            <p >{{scope.item.url}}</p>
+        </ListItem>
+        <!-- <div slot="footer">Footer</div> -->
+    </List>
+
+    <List style="width:350px;margin-top:20px" :data="movieList" :pagination="pagination">
+    <!-- <List  :data="movieList" type="card" :grid="{column:4,gutter:16}"> -->
         <div slot="header" >Header</div>
-        <ListItem slot-scope="scope" >
+        <ListItem slot-scope="scope"  >
+            <img slot="avatar" :src="scope.item.cover" style="width: 50px;height: 60px;"/>
+            <h4 slot="title">{{scope.item.title}}</h4>
             <p >{{scope.item.url}}</p>
         </ListItem>
         <div slot="footer">Footer</div>
-        <!-- <ListItem slot-scope="scope" :pic="scope.item.cover">
-            <p slot="title">{{scope.item.title}}</p>
-            <p >{{scope.item.url}}</p>
-            <p slot="footer">索引：{{scope.$index}}</p>
-        </ListItem> -->
     </List>
+</div>
 </template>
 <script>
     export default {
@@ -27,13 +38,28 @@
                    {cover:"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2518132366.jpg",title:"血观音",url:"https://movie.douban.com/subject/27113517/"},
                    {cover:"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg",title:"红海行动",url:"https://movie.douban.com/subject/26861685/"},
                    {cover:"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2512123434.jpg",title:"黑豹",url:"https://movie.douban.com/subject/6390825/"},
-                ]
+                   {cover:"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2520212236.jpg",title:"疯狂婚礼周",url:"https://movie.douban.com/subject/27031084/"},
+                   {cover:"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2518132366.jpg",title:"血观音",url:"https://movie.douban.com/subject/27113517/"},
+                   {cover:"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg",title:"红海行动",url:"https://movie.douban.com/subject/26861685/"},
+                   {cover:"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2512123434.jpg",title:"黑豹",url:"https://movie.douban.com/subject/6390825/"},
+                ],
+                pagination:{
+                    current:1,
+                    total:1,
+                    pageSize:8
+                },
+                grid:{
+                    column:4,gutter:16
+                }
             }
         },
         methods: {
             changeLimit () {
                 this.limitFrom = this.limitFrom === 0 ? 5 : 0;
             }
+        },
+        mounted(){
+           this.pagination.total = this.movieList.length
         }
     }
 </script>

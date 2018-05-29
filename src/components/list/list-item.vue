@@ -1,7 +1,7 @@
 <template>
-    <div >
+    <div class="list-item">
         <div class="item-left">
-            <img v-if="picShow" :src="pic"/>
+            <slot name="avatar"></slot>
         </div>
         <div class="item-right">
             <div class="headtitle">
@@ -45,7 +45,6 @@
             pic:{
                 type:String,
                 default (val) {
-                    console.log(val);
                     if(val !=null){
                         this.picShow=true;
                     }
@@ -61,7 +60,7 @@
         },
         computed: {
             classes () {
-                return `${prefixCls}-con`;
+                return `${prefixCls}`;
             },
             picShow (){
 
