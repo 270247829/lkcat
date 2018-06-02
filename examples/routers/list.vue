@@ -1,7 +1,19 @@
 <template>
 <div>
     <!-- <List style="width:350px" :data="movieList" > -->
-    <List  :data="movieList" type="card" :grid="grid" :pagination="pagination">
+    <List  :data="movieList" type="card" :grid="grid" :pagination="pagination" :border="true">
+        <!-- <div slot="header" >Header</div> -->
+        <ListItem slot-scope="scope"  >
+            <img slot="avatar" :src="scope.item.cover" style="width: 50px;height: 60px;"/>
+            <h4 slot="title">{{scope.item.title}}</h4>
+            <p >{{scope.item.url}}</p>
+        </ListItem>
+        <div slot="action" style="text-align:center;cursor:pointer"><Icon type="plus-round" size="60" color="#e6f6ff"></Icon></div>
+        <!-- <div slot="footer">Footer</div> -->
+    </List>
+
+    <List style="width:350px;margin-top:20px" :data="movieList"  :border="true">
+    <!-- <List  :data="movieList" type="card" :grid="{column:4,gutter:16}"> -->
         <!-- <div slot="header" >Header</div> -->
         <ListItem slot-scope="scope"  >
             <img slot="avatar" :src="scope.item.cover" style="width: 50px;height: 60px;"/>
@@ -10,17 +22,8 @@
         </ListItem>
         <!-- <div slot="footer">Footer</div> -->
     </List>
-
-    <List style="width:350px;margin-top:20px" :data="movieList" :pagination="pagination">
-    <!-- <List  :data="movieList" type="card" :grid="{column:4,gutter:16}"> -->
-        <div slot="header" >Header</div>
-        <ListItem slot-scope="scope"  >
-            <img slot="avatar" :src="scope.item.cover" style="width: 50px;height: 60px;"/>
-            <h4 slot="title">{{scope.item.title}}</h4>
-            <p >{{scope.item.url}}</p>
-        </ListItem>
-        <div slot="footer">Footer</div>
-    </List>
+    <br>
+    <br>
 </div>
 </template>
 <script>

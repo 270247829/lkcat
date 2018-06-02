@@ -17,6 +17,13 @@
                             </Card>
                         </div>
                     </Col>
+                    <Col :span="24/grid.column" v-if="showAction">
+                        <div :class="itemClass" >
+                            <Card>
+                                <slot name="action" ></slot>
+                            </Card>
+                        </div>
+                    </Col>
                 </Row>
             </template>        
             <div :class="footerClass" v-if="showFooter">
@@ -71,6 +78,12 @@
                 default () {
                     return null
                 }
+            },
+            border:{
+                type:Boolean,
+                default () {
+                    return false;
+                } 
             }
         },
         data () {
@@ -82,7 +95,8 @@
             classes () {
                 return [`${prefixCls}`,
                     {
-                        [`${prefixCls}-card`]: this.type=='card'
+                        [`${prefixCls}-card`]: this.type=='card',
+                        [`${prefixCls}-border`]: this.border==true
                     }
                 ]
             },
@@ -99,10 +113,13 @@
                 return `${prefixCls}`+'-page';
             },
             showHeader(){
-                return !this.$slots.header === undefined;
+                return this.$slots.header !== undefined;
             },
             showFooter(){
-                return !this.$slots.footer === undefined;
+                return this.$slots.footer !== undefined;
+            },
+            showAction(){
+                return this.$slots.action !== undefined;
             },
             showPagination(){
                 return this.pagination != null;
