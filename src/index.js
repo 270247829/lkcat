@@ -53,6 +53,7 @@ import {Select, Option, OptionGroup} from './components/select';
 import locale from './locale/index';
 import List from './components/list';
 import Divider from './components/divider';
+import TreeSelect from './components/tree-select';
 
 const components = {
     Affix,
@@ -125,7 +126,8 @@ const components = {
     Upload,
     List,
     ListItem:List.Item,
-    Divider
+    Divider,
+    TreeSelect
 };
 
 const lkcat = {

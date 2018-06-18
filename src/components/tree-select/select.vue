@@ -1,30 +1,30 @@
 <template>
     <div :class="wrapCls" style="width: 120px;" ref="inputArea" v-clickoutside="closeDropdown">
         <span @click="toggleDropdown" :class="selectionCls" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="true" tabindex="0">
-            <ul v-if="multiple" class="ant-select-selection__rendered">
-                <li v-for="(item,index) in innerValue" unselectable="unselectable" class="ant-select-selection__choice" :title="item.text" style="-webkit-user-select: none;">
-                    <span class="ant-select-selection__choice__remove" @click="clearSingle(index)"></span>
-                    <span class="ant-select-selection__choice__content" v-text="item.text"></span>
+            <ul v-if="multiple" class="lkui-tree-select-selection__rendered">
+                <li v-for="(item,index) in innerValue" unselectable="unselectable" class="lkui-tree-select-selection__choice" :title="item.text" style="-webkit-user-select: none;">
+                    <span class="lkui-tree-select-selection__choice__remove" @click="clearSingle(index)"></span>
+                    <span class="lkui-tree-select-selection__choice__content" v-text="item.text"></span>
                 </li>
-                <li class="ant-select-search ant-select-search--inline">
-                    <span class="ant-select-search__field__wrap">
-                        <input value="" class="ant-select-search__field" role="textbox">
+                <li class="lkui-tree-select-search lkui-tree-select-search--inline">
+                    <span class="lkui-tree-select-search__field__wrap">
+                        <input value="" class="lkui-tree-select-search__field" role="textbox">
                     </span>
                 </li>
             </ul>
-            <div v-else class="ant-select-selection__rendered">
+            <div v-else class="lkui-tree-select-selection__rendered">
                 <span v-show="innerValue.length" v-text="innerValue.length?innerValue[0].text:''"></span>
             </div>
-            <span class="ant-select-search__field__placeholder" v-show="!innerValue.length" style="padding-left:8px">{{placeholder}}</span>
-            <span v-if="allowClear && innerValue.length" class="ant-select-selection__clear" @click.stop="clearSelected"></span>
-            <span class="ant-select-arrow" unselectable="unselectable" style="-webkit-user-select: none;"><b></b></span>
+            <span class="lkui-tree-select-search__field__placeholder" v-show="!innerValue.length" style="padding-left:8px">{{placeholder}}</span>
+            <span v-if="allowClear && innerValue.length" class="lkui-tree-select-selection__clear lkui-icon lkui-icon-ios-close-outline" @click.stop="clearSelected"></span>
+            <span class="lkui-tree-select-arrow lkui-icon lkui-icon-arrow-down-b lkui-select-arrow" unselectable="unselectable" style="-webkit-user-select: none;"></span>
         </span>
          <transition name="slide-up">
             <div :class="dropdownCls" style="max-height: 300px; overflow: auto" :style="style" v-show="open" @click='hide' ref="dropdown">
                 <div>
-                    <span v-if="search" class="ant-select-dropdown-search">
-                        <span class="ant-select-search__field__wrap">
-                            <input v-model="searchValue" class="ant-select-search__field" role="textbox">
+                    <span v-if="search" class="lkui-tree-select-dropdown-search">
+                        <span class="lkui-tree-select-search__field__wrap">
+                            <input v-model="searchValue" class="lkui-tree-select-search__field" role="textbox">
                         </span>
                     </span>
                     <slot></slot>
@@ -41,7 +41,7 @@
         directives: { clickoutside },
         data() {
             return {
-                prefix: 'ant-select',
+                prefix: 'lkui-tree-select',
                 style: {},
                 container: null,
                 open: false,

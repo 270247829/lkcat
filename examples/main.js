@@ -210,6 +210,10 @@ const router = new VueRouter({
         {
             path: '/divider',
             component: (resolve) => require(['./routers/divider.vue'], resolve)
+        },
+        {
+            path: '/tree-select',
+            component: (resolve) => require(['./routers/tree-select.vue'], resolve)
         }
     ]
 });
