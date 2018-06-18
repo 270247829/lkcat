@@ -52,6 +52,7 @@ import {Row, Col} from './components/grid';
 import {Select, Option, OptionGroup} from './components/select';
 import locale from './locale/index';
 import List from './components/list';
+import Divider from './components/divider';
 
 const components = {
     Affix,
@@ -123,7 +124,8 @@ const components = {
     Tree,
     Upload,
     List,
-    ListItem:List.Item
+    ListItem:List.Item,
+    Divider
 };
 
 const lkcat = {
