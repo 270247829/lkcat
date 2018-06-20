@@ -54,6 +54,7 @@ import locale from './locale/index';
 import List from './components/list';
 import Divider from './components/divider';
 import TreeSelect from './components/tree-select';
+import MorePanel from './components/more-panel';
 
 const components = {
     Affix,
@@ -127,7 +128,8 @@ const components = {
     List,
     ListItem:List.Item,
     Divider,
-    TreeSelect
+    TreeSelect,
+    MorePanel
 };
 
 const lkcat = {

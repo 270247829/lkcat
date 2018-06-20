@@ -3,7 +3,7 @@
         <span @click="toggleDropdown" :class="selectionCls" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="true" tabindex="0">
             <ul v-if="multiple" class="lkui-tree-select-selection__rendered">
                 <li v-for="(item,index) in innerValue" unselectable="unselectable" class="lkui-tree-select-selection__choice" :title="item.text" style="-webkit-user-select: none;">
-                    <span class="lkui-tree-select-selection__choice__remove" @click="clearSingle(index)"></span>
+                    <span class="lkui-tree-select-selection__choice__remove lkui-icon lkui-icon-close" @click="clearSingle(item,index)"></span>
                     <span class="lkui-tree-select-selection__choice__content" v-text="item.text"></span>
                 </li>
                 <li class="lkui-tree-select-search lkui-tree-select-search--inline">
@@ -20,7 +20,7 @@
             <span class="lkui-tree-select-arrow lkui-icon lkui-icon-arrow-down-b lkui-select-arrow" unselectable="unselectable" style="-webkit-user-select: none;"></span>
         </span>
          <transition name="slide-up">
-            <div :class="dropdownCls" style="max-height: 300px; overflow: auto" :style="style" v-show="open" @click='hide' ref="dropdown">
+            <div :class="dropdownCls" style="max-height: 300px; overflow: auto; padding: 5px;" :style="style" v-show="open" @click='hide' ref="dropdown">
                 <div>
                     <span v-if="search" class="lkui-tree-select-dropdown-search">
                         <span class="lkui-tree-select-search__field__wrap">
@@ -160,7 +160,7 @@
                 this.$emit('clear', this.innerValue);
                 this.innerValue = [];
             },
-            clearSingle(index) {
+            clearSingle(item,index) {
                 const deleteEle = this.innerValue.splice(index, 1);
                 this.$emit('clear', deleteEle);
             },

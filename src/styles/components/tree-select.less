@@ -5,7 +5,25 @@
 @tree-showline-open-icon: "\e621";
 @tree-showline-close-icon: "\e645";
 @tree-doc-icon: "\e664";
-
+.@{tree-select-prefix-cls}-selection__choice__remove {
+  .iconfont-mixin();
+  color: @text-color;
+  line-height: inherit;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  transition: all 0.3s @ease-in-out;
+  .iconfont-size-under-12px(8px);
+  position: absolute;
+  right: 4px;
+  padding: 0 0 0 8px;
+  &:hover {
+    color: #404040;
+  }
+  // &:before {
+  //   // content: "\e633";
+  // }
+}
 .selection__clear() {
   display: inline-block;
   font-style: normal;
@@ -507,7 +525,7 @@
   &-selection--multiple {
     min-height: @input-height-base;
     cursor: text;
-    padding-bottom: 3px;
+    padding-bottom: 6px;
     .clearfix;
 
     .@{tree-select-prefix-cls}-search--inline {

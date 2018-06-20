@@ -214,6 +214,10 @@ const router = new VueRouter({
         {
             path: '/tree-select',
             component: (resolve) => require(['./routers/tree-select.vue'], resolve)
+        },
+        {
+            path: '/more-panel',
+            component: (resolve) => require(['./routers/more-panel.vue'], resolve)
         }
     ]
 });
