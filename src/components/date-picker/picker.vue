@@ -166,6 +166,10 @@
             options: {
                 type: Object,
                 default: () => ({})
+            },
+            isDate:{
+                type:Boolean,
+                default:false
             }
         },
         data(){
@@ -186,14 +190,32 @@
         },
         computed: {
             publicVModelValue(){
-                if (this.multiple){
-                    return this.internalValue.slice();
-                } else {
-                    const isRange = this.type.includes('range');
-                    let val = this.internalValue.map(date => date instanceof Date ? new Date(date) : (date || ''));
-
-                    if (this.type.match(/^time/)) val = val.map(this.formatDate);
-                    return (isRange || this.multiple) ? val : val[0];
+                //原始版本
+                if(this.isDate){
+                    if (this.multiple){
+                        return this.internalValue.slice();
+                    } else {
+                        const isRange = this.type.includes('range');
+                        let val = this.internalValue.map(date => date instanceof Date ? new Date(date) : (date || ''));
+                        if (this.type.match(/^time/)) val = val.map(this.formatDate);
+                        return (isRange || this.multiple) ? val : val[0];
+                    }
+                }else{
+                    let result = null;
+                    if (this.multiple){
+                        result = this.internalValue.slice();
+                    } else {
+                        const isRange = this.type.includes('range');
+                        let val = this.internalValue.map(date => date instanceof Date ? new Date(date) : (date || ''));
+                        if (this.type.match(/^time/)) val = val.map(this.formatDate);
+                        result = (isRange || this.multiple) ? val : val[0];
+                    }
+                    if(Array.isArray(result)){
+                        result = result.map(value => this.formatDate(value));
+                    }else{
+                        result = this.formatDate(result);
+                    }
+                    return result;
                 }
             },
             publicStringValue(){
@@ -201,6 +223,7 @@
                 if (type.match(/^time/)) return publicVModelValue;
                 if (this.multiple) return formatDate(publicVModelValue);
                 return Array.isArray(publicVModelValue) ? publicVModelValue.map(formatDate) : formatDate(publicVModelValue);
+
             },
             opened () {
                 return this.open === null ? this.visible : this.open;
@@ -399,7 +422,6 @@
             },
             value(val) {
                 this.internalValue = this.parseDate(val);
-
             },
             open (val) {
                 this.visible = val === true;

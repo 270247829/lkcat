@@ -251,16 +251,58 @@
     <div style="width: 500px;margin: 100px;">
         <Row>
             <Col span="12">
-            <DatePicker type="date" show-week-numbers placeholder="Select date" style="width: 200px"></DatePicker>
+            <DatePicker type="datetime" v-model="date" format="yyyy-MM-dd HH:mm:ss" show-week-numbers placeholder="Select date" style="width: 200px" ></DatePicker>
             </Col>
             <Col span="12">
             <DatePicker type="daterange" show-week-numbers placement="bottom-end" placeholder="Select date" style="width: 200px"></DatePicker>
             </Col>
+            <Button @click="c">asdsad</Button>
+
+            <DatePicker v-model="formItem.startTime"  :options="options4" type="datetime"  placeholder="请选择开始时间" style="width: 158px;margin-left:10px;" ></DatePicker>
+            <span>-</span>
+            <DatePicker v-model="formItem.endTime"  :options="options3" type="datetime" placeholder="请选择结束时间" style="width: 158px;" format="yyyy-MM-dd HH:mm:ss" ></DatePicker>
         </Row>
     </div>
 </template>
 <script>
     export default {
-
+        data () {
+            return {
+                date:'',
+                formItem:{
+                    startTime:'',
+                    endTime:''
+                },
+                options3: {
+                    disabledDate:date=> {
+                    //this.formItem.startTime = formatDate(this.formItem.startTime,'yyyy-MM-dd hh:mm:ss');
+                    //this.formItem.endTime=formatDate(this.formItem.endTime,'yyyy-MM-dd 23:59:59');
+                    let start=this.formItem.startTime.valueOf();
+                    let end=this.formItem.endTime.valueOf();
+                        if (!start || !end) {
+                              return false;
+                            }
+                        return end && (end.valueOf()+86300000) < start;
+                    }
+                },
+                options4: {
+                    // disabledDate:date=> {
+                    //     let end=this.formItem.endTime.valueOf();
+                    //     if (!end || !date) {
+                    //             return false;
+                    //         }
+                    //     return date && date.valueOf() > end;
+                    // }
+                    disabledDate:date=>{
+                            return date && date.valueOf() < Date.now() - 86400000;
+                    }
+                }
+            }
+        },
+        methods:{
+            c(){
+                 console.log(this.date);
+            }
+        }
     }
 </script>
