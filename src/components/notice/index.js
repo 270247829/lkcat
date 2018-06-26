@@ -2,10 +2,10 @@ import Notification from '../base/notification';
 
 const prefixCls = 'lkui-notice';
 const iconPrefixCls = 'lkui-icon';
-const prefixKey = 'ivu_notice_key_';
+const prefixKey = 'lkui_notice_key_';
 
-let top = 24;
-let defaultDuration = 4.5;
+let top = 50;
+let defaultDuration = 5;
 let noticeInstance;
 let name = 1;
 

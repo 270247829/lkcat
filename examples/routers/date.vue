@@ -278,11 +278,11 @@
                     //this.formItem.startTime = formatDate(this.formItem.startTime,'yyyy-MM-dd hh:mm:ss');
                     //this.formItem.endTime=formatDate(this.formItem.endTime,'yyyy-MM-dd 23:59:59');
                     let start=this.formItem.startTime.valueOf();
-                    let end=this.formItem.endTime.valueOf();
-                        if (!start || !end) {
+                    
+                        if (!start || !date) {
                               return false;
                             }
-                        return end && (end.valueOf()+86300000) < start;
+                        return date && (date.valueOf()+86300000) < start;
                     }
                 },
                 options4: {

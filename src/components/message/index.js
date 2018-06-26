@@ -2,11 +2,11 @@ import Notification from '../base/notification';
 
 const prefixCls = 'lkui-message';
 const iconPrefixCls = 'lkui-icon';
-const prefixKey = 'ivu_message_key_';
+const prefixKey = 'lkui_message_key_';
 
 const defaults = {
-    top: 24,
-    duration: 1.5
+    top: 50,
+    duration: 3
 };
 
 let messageInstance;
