@@ -32,7 +32,7 @@
                     @keydown.delete="handleInputDelete"
                     ref="input">
                 <Icon type="ios-close" :class="[prefixCls + '-arrow']" v-show="showCloseIcon" @click.native.stop="clearSingleSelect"></Icon>
-                <Icon type="arrow-down-b" :class="[prefixCls + '-arrow']" v-if="!remote"></Icon>
+                <Icon type="ios-arrow-down" :class="[prefixCls + '-arrow']" v-if="!remote"></Icon>
             </slot>
         </div>
         <transition :name="transitionName">

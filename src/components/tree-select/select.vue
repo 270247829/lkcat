@@ -17,7 +17,7 @@
             </div>
             <span class="lkui-tree-select-search__field__placeholder" v-show="!innerValue.length" style="padding-left:8px">{{placeholder}}</span>
             <span v-if="allowClear && innerValue.length" class="lkui-tree-select-selection__clear lkui-icon lkui-icon-ios-close-outline" @click.stop="clearSelected"></span>
-            <span class="lkui-tree-select-arrow lkui-icon lkui-icon-arrow-down-b lkui-select-arrow" unselectable="unselectable" style="-webkit-user-select: none;"></span>
+            <span class="lkui-tree-select-arrow lkui-icon lkui-icon-ios-arrow-down lkui-select-arrow" unselectable="unselectable" style="-webkit-user-select: none;"></span>
         </span>
          <transition name="slide-up">
             <div :class="dropdownCls" style="max-height: 300px; overflow: auto; padding: 5px;" :style="style" v-show="open" @click='hide' ref="dropdown">
