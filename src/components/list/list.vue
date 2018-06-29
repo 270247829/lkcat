@@ -1,144 +1,145 @@
 <template>
-        <div :class="classes">
-            <div :class="headerClass" v-if="showHeader">
-                <slot name="header" ></slot>
-            </div>
-            <template v-if="type!='card'">
-                <div :class="itemClass" v-for="(item,index) in currentData" :key="index">
-                    <slot :item="item" :$index="index"></slot>
-                </div>
-            </template>
-            <template v-else>
-                <Row :gutter="grid.gutter">
-                    <Col :span="24/grid.column"  v-for="(item,index) in currentData" :key="index">
-                        <div :class="itemClass" >
-                            <Card>
-                            <slot :item="item" :$index="index"></slot>
-                            </Card>
-                        </div>
-                    </Col>
-                    <Col :span="24/grid.column" v-if="showAction">
-                        <div :class="itemClass" >
-                            <Card>
-                                <slot name="action" ></slot>
-                            </Card>
-                        </div>
-                    </Col>
-                </Row>
-            </template>        
-            <div :class="footerClass" v-if="showFooter">
-                <slot name="footer" ></slot>
-            </div>
-            <div :class="pageClass" v-if="showPagination">
-                <Page :total="pagination.total" :current="pagination.current" :page-size="pagination.pageSize" @on-change="changePage"></Page>
-            </div>
+    <div :class="classes">
+        <div :class="headerClass" v-if="showHeader">
+            <slot name="header"></slot>
         </div>
+        <template v-if="type!='card'">
+            <div :class="itemClass" v-for="(item,index) in currentData" :key="index">
+                <slot :item="item" :$index="index"></slot>
+            </div>
+        </template>
+        <template v-else>
+            <Row :gutter="grid.gutter">
+                <Col :span="24/grid.column" v-for="(item,index) in currentData" :key="index">
+                    <div :class="itemClass">
+                        <Card>
+                            <slot :item="item" :$index="index"></slot>
+                        </Card>
+                    </div>
+                </Col>
+                <Col :span="24/grid.column" v-if="showAction">
+                    <div :class="itemClass">
+                        <Card>
+                            <slot name="action"></slot>
+                        </Card>
+                    </div>
+                </Col>
+            </Row>
+        </template>
+        <div :class="footerClass" v-if="showFooter">
+            <slot name="footer"></slot>
+        </div>
+        <div :class="pageClass" v-if="showPagination">
+            <Page :total="pagination.total" :current="pagination.current" :page-size="pagination.pageSize"
+                  @on-change="changePage"></Page>
+        </div>
+    </div>
 </template>
 <script>
     const prefixCls = 'lkui-list';
-    
+
     export default {
         name: 'List',
         props: {
             data: {
                 type: Array,
-                default () {
+                default() {
                     return [];
                 }
             },
-            item:{
+            item: {
                 type: Object,
-                default () {
+                default() {
                     return {};
                 }
             },
-            title:{
-                type:String,
+            title: {
+                type: String,
             },
-            url:{
-               type:String 
+            url: {
+                type: String
             },
-            content:{
-                type:String
+            content: {
+                type: String
             },
-            type:{
-                type:String,
-                default () {
+            type: {
+                type: String,
+                default() {
                     return '';
-                } 
-            },
-            grid:{
-                type:Object,
-                default () {
-                    return {column:4,gutter:16};
                 }
             },
-            pagination:{
-                type:Object,
-                default () {
-                    return null
+            grid: {
+                type: Object,
+                default() {
+                    return {column: 4, gutter: 16};
                 }
             },
-            border:{
-                type:Boolean,
-                default () {
+            pagination: {
+                type: Object,
+                default() {
+                    return null;
+                }
+            },
+            border: {
+                type: Boolean,
+                default() {
                     return false;
-                } 
+                }
             }
         },
-        data () {
+        data() {
             return {
-               showContent:true
+                showContent: true
             };
         },
         computed: {
-            classes () {
+            classes() {
                 return [`${prefixCls}`,
                     {
-                        [`${prefixCls}-card`]: this.type=='card',
-                        [`${prefixCls}-border`]: this.border==true
+                        [`${prefixCls}-card`]: this.type == 'card',
+                        [`${prefixCls}-border`]: this.border == true
                     }
-                ]
+                ];
             },
-            itemClass () {
-                return `${prefixCls}`+'-item';
+            itemClass() {
+                return `${prefixCls}` + '-item';
             },
-            headerClass () {
-                return `${prefixCls}`+'-header';
+            headerClass() {
+                return `${prefixCls}` + '-header';
             },
-            footerClass () {
-                return `${prefixCls}`+'-footer';
+            footerClass() {
+                return `${prefixCls}` + '-footer';
             },
-            pageClass () {
-                return `${prefixCls}`+'-page';
+            pageClass() {
+                return `${prefixCls}` + '-page';
             },
-            showHeader(){
+            showHeader() {
                 return this.$slots.header !== undefined;
             },
-            showFooter(){
+            showFooter() {
                 return this.$slots.footer !== undefined;
             },
-            showAction(){
+            showAction() {
                 return this.$slots.action !== undefined;
             },
-            showPagination(){
+            showPagination() {
                 return this.pagination != null;
             },
-            currentData(){
-                if(this.pagination==null){
+            currentData() {
+                if (this.pagination == null) {
                     return this.data;
                 }
-                return this.data.slice(this.pagination.pageSize*(this.pagination.current-1),this.pagination.pageSize*this.pagination.current);
+                return this.data.slice(this.pagination.pageSize * (this.pagination.current - 1), this.pagination.pageSize * this.pagination.current);
             }
         },
-        mounted(){
+        mounted() {
 
         },
-        methods:{
-            changePage(current){
+        methods: {
+            changePage(current) {
                 this.pagination.current = current;
             }
         }
-        
+
     };
 </script>

@@ -6,8 +6,8 @@
     padding: 8px 48px 8px 16px;
     border-radius: @border-radius-base;
     color: @text-color;
-    font-size: @font-size-small;
-    line-height: 16px;
+    font-size: @font-size-base;
+    line-height: 1.5;
     margin-bottom: 10px;
 
     &&-with-icon{
@@ -30,7 +30,7 @@
     }
 
     &-success {
-        border: 1px solid tint(@success-color, 80%);
+        border: 1px solid tint(@success-color, 60%);
         background-color: tint(@success-color, 90%);
         .@{alert-prefix-cls}-icon {
             color: @success-color;
@@ -38,7 +38,7 @@
     }
 
     &-info {
-        border: 1px solid tint(@primary-color, 80%);
+        border: 1px solid tint(@primary-color, 60%);
         background-color: tint(@primary-color, 90%);
         .@{alert-prefix-cls}-icon {
             color: @primary-color;
@@ -46,7 +46,7 @@
     }
 
     &-warning {
-        border: 1px solid tint(@warning-color, 80%);
+        border: 1px solid tint(@warning-color, 60%);
         background-color: tint(@warning-color, 90%);
         .@{alert-prefix-cls}-icon {
             color: @warning-color;
@@ -54,7 +54,7 @@
     }
 
     &-error {
-        border: 1px solid tint(@error-color, 80%);
+        border: 1px solid tint(@error-color, 60%);
         background-color: tint(@error-color, 90%);
         .@{alert-prefix-cls}-icon {
             color: @error-color;

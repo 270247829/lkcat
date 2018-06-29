@@ -252,6 +252,8 @@
         <Row>
             <Col span="12">
             <DatePicker type="datetime" v-model="date" format="yyyy-MM-dd HH:mm:ss" show-week-numbers placeholder="Select date" style="width: 200px" ></DatePicker>
+                <br>
+                <TimePicker type="time" placeholder="Select time" style="width: 168px"></TimePicker>
             </Col>
             <Col span="12">
             <DatePicker type="daterange" show-week-numbers placement="bottom-end" placeholder="Select date" style="width: 200px"></DatePicker>
@@ -278,7 +280,7 @@
                     //this.formItem.startTime = formatDate(this.formItem.startTime,'yyyy-MM-dd hh:mm:ss');
                     //this.formItem.endTime=formatDate(this.formItem.endTime,'yyyy-MM-dd 23:59:59');
                     let start=this.formItem.startTime.valueOf();
-                    
+
                         if (!start || !date) {
                               return false;
                             }
