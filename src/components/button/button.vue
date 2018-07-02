@@ -50,7 +50,9 @@
         },
         data () {
             return {
-                showSlot: true
+                showSlot: true,
+                clickTimer: null,
+                clicked: false
             };
         },
         computed: {
@@ -63,13 +65,17 @@
                         [`${prefixCls}-${this.shape}`]: !!this.shape,
                         [`${prefixCls}-${this.size}`]: !!this.size,
                         [`${prefixCls}-loading`]: this.loading != null && this.loading,
-                        [`${prefixCls}-icon-only`]: !this.showSlot && (!!this.icon || this.loading)
+                        [`${prefixCls}-icon-only`]: !this.showSlot && (!!this.icon || this.loading),
+                        [`${prefixCls}-clicked`] : this.clicked
                     }
                 ];
             }
         },
         methods: {
             handleClick (event) {
+                this.clicked = true;
+                if (this.clickTimer) clearTimeout(this.clickTimer);
+                this.clickTimer = setTimeout(() => this.clicked = false, 500);
                 this.$emit('click', event);
             }
         },

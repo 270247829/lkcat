@@ -9,12 +9,12 @@
     }
 }
 
-.move-motion(move-up, ivuMoveUp);
-.move-motion(move-down, ivuMoveDown);
-.move-motion(move-left, ivuMoveLeft);
-.move-motion(move-right, ivuMoveRight);
+.move-motion(move-up, lkuiMoveUp);
+.move-motion(move-down, lkuiMoveDown);
+.move-motion(move-left, lkuiMoveLeft);
+.move-motion(move-right, lkuiMoveRight);
 
-@keyframes ivuMoveDownIn {
+@keyframes lkuiMoveDownIn {
     0% {
         transform-origin: 0 0;
         transform: translateY(100%);
@@ -27,7 +27,7 @@
     }
 }
 
-@keyframes ivuMoveDownOut {
+@keyframes lkuiMoveDownOut {
     0% {
         transform-origin: 0 0;
         transform: translateY(0%);
@@ -40,7 +40,7 @@
     }
 }
 
-@keyframes ivuMoveLeftIn {
+@keyframes lkuiMoveLeftIn {
     0% {
         transform-origin: 0 0;
         transform: translateX(-100%);
@@ -53,7 +53,7 @@
     }
 }
 
-@keyframes ivuMoveLeftOut {
+@keyframes lkuiMoveLeftOut {
     0% {
         transform-origin: 0 0;
         transform: translateX(0%);
@@ -66,7 +66,7 @@
     }
 }
 
-@keyframes ivuMoveRightIn {
+@keyframes lkuiMoveRightIn {
     0% {
         opacity: 0;
         transform-origin: 0 0;
@@ -79,7 +79,7 @@
     }
 }
 
-@keyframes ivuMoveRightOut {
+@keyframes lkuiMoveRightOut {
     0% {
         transform-origin: 0 0;
         transform: translateX(0%);
@@ -92,7 +92,7 @@
     }
 }
 
-@keyframes ivuMoveUpIn {
+@keyframes lkuiMoveUpIn {
     0% {
         transform-origin: 0 0;
         transform: translateY(-100%);
@@ -105,7 +105,7 @@
     }
 }
 
-@keyframes ivuMoveUpOut {
+@keyframes lkuiMoveUpOut {
     0% {
         transform-origin: 0 0;
         transform: translateY(0%);
@@ -120,10 +120,10 @@
 
 // specific transition for Notice
 
-.move-motion(move-notice, ivuMoveNotice);
+.move-motion(move-notice, lkuiMoveNotice);
 @import '../components/notice.less';
 
-@keyframes ivuMoveNoticeIn {
+@keyframes lkuiMoveNoticeIn {
     0% {
         opacity: 0;
         transform-origin: 0 0;
@@ -136,7 +136,7 @@
     }
 }
 
-@keyframes ivuMoveNoticeOut {
+@keyframes lkuiMoveNoticeOut {
     0% {
         transform-origin: 0 0;
         transform: translateX(0%);
