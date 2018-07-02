@@ -76,17 +76,35 @@
         .btn-color(@success-color);
     }
 
+    &-success&-clicked:after {
+        border-color: @success-color;
+    }
+
     &-warning {
         .btn-color(@warning-color);
+    }
+
+    &-warning&-clicked:after {
+        border-color: @warning-color;
     }
 
     &-error {
         .btn-color(@error-color);
     }
 
+    &-error&-clicked:after {
+        border-color: @error-color;
+    }
+
+
     &-info {
         .btn-color(@info-color);
     }
+
+    &-info&-clicked:after {
+        border-color: @info-color;
+    }
+
 
     &-circle,
     &-circle-outline {
@@ -118,8 +136,8 @@
         right: -1px;
         border-radius: inherit;
         border: 0 solid @primary-color;
-        opacity: 0.4;
-        animation: buttonEffect .4s;
+        opacity: 0.6;
+        animation: buttonEffect .6s;
         display: block;
     }
 
@@ -142,6 +160,8 @@
 
 
 }
+
+
 
 @keyframes buttonEffect {
     to {
