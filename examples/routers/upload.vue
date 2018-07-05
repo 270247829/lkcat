@@ -9,7 +9,7 @@
                 </div>
             </template>
             <template v-else>
-                <i-progress v-if="item.showProgress" :percent="item.percentage" hide-info></i-progress>
+                <lk-progress v-if="item.showProgress" :percent="item.percentage" hide-info></lk-progress>
             </template>
         </div>
         <Upload
@@ -150,9 +150,9 @@
 <!--<template>-->
     <!--<div>-->
         <!--<Upload action="//jsonplaceholder.typicode.com/posts/" :before-upload="handleBeforeUpload" ref="file">-->
-            <!--<i-button type="ghost" icon="ios-cloud-upload-outline">选择文件</i-button>-->
+            <!--<Button type="ghost" icon="ios-cloud-upload-outline">选择文件</Button>-->
         <!--</Upload>-->
-        <!--<i-button @click.native="handleUpload">上传</i-button>-->
+        <!--<Button @click.native="handleUpload">上传</Button>-->
     <!--</div>-->
 <!--</template>-->
 <!--<script>-->

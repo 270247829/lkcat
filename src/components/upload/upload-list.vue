@@ -13,11 +13,11 @@
                 v-show="file.status === 'finished'"
                 @click.native="handleRemove(file)"></Icon>
             <transition name="fade">
-                <i-progress
+                <lk-progress
                     v-if="file.showProgress"
                     :stroke-width="2"
                     :percent="parsePercentage(file.percentage)"
-                    :status="file.status === 'finished' && file.showProgress ? 'success' : 'normal'"></i-progress>
+                    :status="file.status === 'finished' && file.showProgress ? 'success' : 'normal'"></lk-progress>
             </transition>
         </li>
     </ul>

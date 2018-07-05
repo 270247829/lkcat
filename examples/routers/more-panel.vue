@@ -38,10 +38,10 @@
                     </CheckboxGroup>
                 </FormItem>
                 <FormItem label="Switch">
-                    <i-switch v-model="formItem.switch" size="large">
+                    <lk-switch v-model="formItem.switch" size="large">
                         <span slot="open">On</span>
                         <span slot="close">Off</span>
-                    </i-switch>
+                    </lk-switch>
                 </FormItem>
                 <FormItem label="Slider">
                     <Slider v-model="formItem.slider" range></Slider>

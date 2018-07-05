@@ -8,7 +8,7 @@
     const prefixCls = 'lkui-col';
 
     export default {
-        name: 'iCol',
+        name: 'lkCol',
         props: {
             span: [Number, String],
             order: [Number, String],

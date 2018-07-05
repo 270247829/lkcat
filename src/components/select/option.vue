@@ -8,7 +8,7 @@
     const prefixCls = 'lkui-select-item';
 
     export default {
-        name: 'iOption',
+        name: 'lkOption',
         componentName: 'select-item',
         mixins: [ Emitter ],
         props: {

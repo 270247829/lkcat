@@ -1,9 +1,9 @@
 <template>
     <div>
-        <i-switch v-model="m1" true-value="yes" false-value="no">
+        <lk-switch v-model="m1" true-value="yes" false-value="no">
             <span slot="open">开</span>
             <span slot="close">关</span>
-        </i-switch>
+        </lk-switch>
         {{ m1 }}
         <div @click="m1 = 'no'">toggle</div>
     </div>

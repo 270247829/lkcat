@@ -1,10 +1,10 @@
 <template>
     <div>
-        <i-button @click.native="info">显示普通提示</i-button>
-        <i-button @click.native="success">显示成功提示</i-button>
-        <i-button @click.native="warning">显示警告提示</i-button>
-        <i-button @click.native="error">显示错误提示</i-button>
-        <i-button @click.native="destroy">销毁提示</i-button>
+        <Button @click.native="info">显示普通提示</Button>
+        <Button @click.native="success">显示成功提示</Button>
+        <Button @click.native="warning">显示警告提示</Button>
+        <Button @click.native="error">显示错误提示</Button>
+        <Button @click.native="destroy">销毁提示</Button>
     </div>
 </template>
 <script>

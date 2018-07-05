@@ -1,11 +1,11 @@
 <template>
     <div :class="prefixCls">
-        <i-input
+        <lk-input
             v-model="currentQuery"
             size="small"
             :icon="icon"
             :placeholder="placeholder"
-            @on-click="handleClick"></i-input>
+            @on-click="handleClick"></lk-input>
     </div>
 </template>
 <script>

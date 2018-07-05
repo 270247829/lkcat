@@ -1,9 +1,9 @@
 <template>
     <div v-if="showSizer || showElevator" :class="optsClasses">
         <div v-if="showSizer" :class="sizerClasses">
-            <i-select v-model="currentPageSize" :size="size" :placement="placement" :transfer="transfer" @on-change="changeSize">
-                <i-option v-for="item in pageSizeOpts" :key="item" :value="item" style="text-align:center;">{{ item }} {{ t('i.page.page') }}</i-option>
-            </i-select>
+            <lk-select v-model="currentPageSize" :size="size" :placement="placement" :transfer="transfer" @on-change="changeSize">
+                <lk-option v-for="item in pageSizeOpts" :key="item" :value="item" style="text-align:center;">{{ item }} {{ t('i.page.page') }}</lk-option>
+            </lk-select>
         </div>
         <div v-if="showElevator" :class="ElevatorClasses">
             {{ t('i.page.goto') }}

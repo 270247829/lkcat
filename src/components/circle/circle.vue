@@ -15,7 +15,7 @@
     const prefixCls = 'lkui-chart-circle';
 
     export default {
-        name: 'iCircle',
+        name: 'lkCircle',
         props: {
             percent: {
                 type: Number,

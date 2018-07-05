@@ -33,7 +33,7 @@
     }
 </style>
 <template>
-    <i-circle
+    <lk-circle
             :size="250"
             :trail-width="4"
             :stroke-width="5"
@@ -48,7 +48,7 @@
                 <i>75%</i>
             </span>
         </div>
-    </i-circle>
+    </lk-circle>
 </template>
 <script>
     export default {

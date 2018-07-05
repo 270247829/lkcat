@@ -4,7 +4,7 @@
 <script>
     const prefixCls = 'lkui-layout';
     export default {
-        name: 'Footer',
+        name: 'lkFooter',
         computed: {
             wrapClasses () {
                 return `${prefixCls}-footer`;

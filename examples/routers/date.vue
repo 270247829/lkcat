@@ -44,12 +44,12 @@
 
 <!--<template>-->
     <!--<row>-->
-        <!--<i-col span="12">-->
+        <!--<lk-col span="12">-->
             <!--<Date-picker type="date" :options="options1" placeholder="选择日期" style="width: 200px"></Date-picker>-->
-        <!--</i-col>-->
-        <!--<i-col span="12">-->
+        <!--</lk-col>-->
+        <!--<lk-col span="12">-->
             <!--<Date-picker type="daterange" :options="options2" placement="bottom-end" placeholder="选择日期" style="width: 200px"></Date-picker>-->
-        <!--</i-col>-->
+        <!--</lk-col>-->
     <!--</row>-->
 <!--</template>-->
 <!--<script>-->
@@ -130,12 +130,12 @@
 
 <!--<template>-->
     <!--<row>-->
-        <!--<i-col span="12">-->
+        <!--<lk-col span="12">-->
             <!--<Date-picker :value="value1" format="yyyy年MM月dd日" type="date" placeholder="选择日期" style="width: 200px"></Date-picker>-->
-        <!--</i-col>-->
-        <!--<i-col span="12">-->
+        <!--</lk-col>-->
+        <!--<lk-col span="12">-->
             <!--<Date-picker :value="value2" format="yyyy/MM/dd" type="daterange" placement="bottom-end" placeholder="选择日期" style="width: 200px"></Date-picker>-->
-        <!--</i-col>-->
+        <!--</lk-col>-->
     <!--</row>-->
 <!--</template>-->
 <!--<script>-->
@@ -206,12 +206,12 @@
 
 <!--<template>-->
     <!--<row>-->
-        <!--<i-col span="12">-->
+        <!--<lk-col span="12">-->
             <!--<Time-picker type="time" placeholder="选择时间" style="width: 168px"></Time-picker>-->
-        <!--</i-col>-->
-        <!--<i-col span="12">-->
+        <!--</lk-col>-->
+        <!--<lk-col span="12">-->
             <!--<Time-picker type="timerange" placement="bottom-end" placeholder="选择时间" style="width: 168px"></Time-picker>-->
-        <!--</i-col>-->
+        <!--</lk-col>-->
     <!--</row>-->
 <!--</template>-->
 <!--<script>-->

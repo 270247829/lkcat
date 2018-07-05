@@ -114,16 +114,16 @@
 <!--<template>-->
     <!--<div>-->
         <!--<Row>-->
-            <!--<i-col class="demo-spin-col" span="8">-->
+            <!--<lk-col class="demo-spin-col" span="8">-->
                 <!--<Spin fix>加载中...</Spin>-->
-            <!--</i-col>-->
-            <!--<i-col class="demo-spin-col" span="8">-->
+            <!--</lk-col>-->
+            <!--<lk-col class="demo-spin-col" span="8">-->
                 <!--<Spin fix>-->
                     <!--<Icon type="load-c" size=18 class="demo-spin-icon-load"></Icon>-->
                     <!--<div>Loading</div>-->
                 <!--</Spin>-->
-            <!--</i-col>-->
-            <!--<i-col class="demo-spin-col" span="8">-->
+            <!--</lk-col>-->
+            <!--<lk-col class="demo-spin-col" span="8">-->
                 <!--<Spin fix>-->
                     <!--<div class="loader">-->
                         <!--<svg class="circular" viewBox="25 25 50 50">-->
@@ -131,7 +131,7 @@
                         <!--</svg>-->
                     <!--</div>-->
                 <!--</Spin>-->
-            <!--</i-col>-->
+            <!--</lk-col>-->
         <!--</Row>-->
     <!--</div>-->
 <!--</template>-->
@@ -180,7 +180,7 @@
             </Spin>
         </div>
         <br>
-        切换显示状态：<i-switch @on-change="spinShow = !spinShow" ></i-switch>
+        切换显示状态：<lk-switch @on-change="spinShow = !spinShow" ></lk-switch>
         <Button @click="show">show</Button>
         <Button @click="hide">hide</Button>
     </div>

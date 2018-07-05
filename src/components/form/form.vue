@@ -8,7 +8,7 @@
     const prefixCls = 'lkui-form';
 
     export default {
-        name: 'iForm',
+        name: 'lkForm',
         props: {
             model: {
                 type: Object

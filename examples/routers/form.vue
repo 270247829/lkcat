@@ -205,7 +205,7 @@
         <!--<div style="margin: 100px">-->
             <!--<form action="/">-->
                 <!--<Input name="f1"></Input>-->
-                <!--<i-switch name="f2" :true-value="1" :false-value="2"></i-switch>-->
+                <!--<lk-switch name="f2" :true-value="1" :false-value="2"></lk-switch>-->
                 <!--<Select v-model="model1" multiple style="width:200px" name="f3">-->
                     <!--<Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>-->
                 <!--</Select>-->
@@ -464,10 +464,10 @@
             </CheckboxGroup>
         </FormItem>
         <FormItem label="Switch">
-            <i-switch v-model="formItem.switch" size="large">
+            <lk-switch v-model="formItem.switch" size="large">
                 <span slot="open">On</span>
                 <span slot="close">Off</span>
-            </i-switch>
+            </lk-switch>
         </FormItem>
         <FormItem label="Slider">
             <Slider v-model="formItem.slider" range></Slider>

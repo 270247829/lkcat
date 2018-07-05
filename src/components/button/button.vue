@@ -16,7 +16,7 @@
     const prefixCls = 'lkui-btn';
 
     export default {
-        name: 'Button',
+        name: 'lkButton',
         components: { Icon },
         props: {
             type: {

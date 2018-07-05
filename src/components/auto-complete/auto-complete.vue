@@ -1,5 +1,5 @@
 <template>
-    <i-select
+    <lk-select
         ref="select"
         class="lkui-auto-complete"
         :label="label"
@@ -15,7 +15,7 @@
         @on-change="handleChange"
         :transfer="transfer">
         <slot name="input">
-            <i-input
+            <lk-input
                 :element-id="elementId"
                 ref="input"
                 slot="input"
@@ -27,12 +27,12 @@
                 :icon="inputIcon"
                 @on-click="handleClear"
                 @on-focus="handleFocus"
-                @on-blur="handleBlur"></i-input>
+                @on-blur="handleBlur"></lk-input>
         </slot>
         <slot>
-            <i-option v-for="item in filteredData" :value="item" :key="item">{{ item }}</i-option>
+            <lk-option v-for="item in filteredData" :value="item" :key="item">{{ item }}</lk-option>
         </slot>
-    </i-select>
+    </lk-select>
 </template>
 <script>
     import iSelect from '../select/select.vue';

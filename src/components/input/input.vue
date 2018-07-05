@@ -67,7 +67,7 @@
     const prefixCls = 'lkui-input';
 
     export default {
-        name: 'Input',
+        name: 'lkInput',
         mixins: [ Emitter ],
         props: {
             type: {

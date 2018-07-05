@@ -53,7 +53,7 @@
         <!--<Step title="步骤4"></Step>-->
     <!--</Steps>-->
     <!--<br>-->
-    <!--<i-button type="primary" @click.native="next">下一步</i-button>-->
+    <!--<Button type="primary" @click.native="next">下一步</Button>-->
     <!--<br><br><br>-->
     <!--<Steps :current="1" direction="vertical" size="small">-->
         <!--<Step title="已完成" content="这里是该步骤的描述信息这里是该步骤的描述信息这里是该步骤的描述信息"></Step>-->

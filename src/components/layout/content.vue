@@ -4,7 +4,7 @@
 <script>
     const prefixCls = 'lkui-layout';
     export default {
-        name: 'Content',
+        name: 'lkContent',
         computed: {
             wrapClasses () {
                 return `${prefixCls}-content`;

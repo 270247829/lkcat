@@ -15,7 +15,7 @@
     }
 </style>
 <template>
-    <i-button @click="modal9 = true">距离顶部 20px</i-button>
+    <Button @click="modal9 = true">距离顶部 20px</Button>
     <Modal
             title="对话框标题"
             :visible.sync="modal9"
@@ -24,7 +24,7 @@
         <p>对话框内容</p>
         <p>对话框内容</p>
     </Modal>
-    <i-button @click="modal10 = true">垂直居中</i-button>
+    <Button @click="modal10 = true">垂直居中</Button>
     <Modal
             title="对话框标题"
             :visible.sync="modal10"
@@ -33,8 +33,8 @@
         <p>对话框内容</p>
         <p>对话框内容</p>
     </Modal>
-    <i-button @click="instance(true)">Create Instance Scrollable</i-button>
-    <i-button @click="instance(false)">Create Instance Non-scrollable</i-button>
+    <Button @click="instance(true)">Create Instance Scrollable</Button>
+    <Button @click="instance(false)">Create Instance Non-scrollable</Button>
     <div class="placeholder"></div>
 </template>
 <script>

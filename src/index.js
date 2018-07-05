@@ -134,20 +134,20 @@ const components = {
 
 const lkcat = {
     ...components,
-    iButton: Button,
-    iCircle: Circle,
-    iCol: Col,
-    iContent: Content,
-    iForm: Form,
-    iFooter: Footer,
-    iHeader: Header,
-    iInput: Input,
-    iMenu: Menu,
-    iOption: Option,
-    iProgress: Progress,
-    iSelect: Select,
-    iSwitch: Switch,
-    iTable: Table
+    lkButton: Button,
+    lkCircle: Circle,
+    lkCol: Col,
+    lkContent: Content,
+    lkForm: Form,
+    lkFooter: Footer,
+    lkHeader: Header,
+    lkInput: Input,
+    lkMenu: Menu,
+    lkOption: Option,
+    lkProgress: Progress,
+    lkSelect: Select,
+    lkSwitch: Switch,
+    lkTable: Table
 };
 
 const install = function(Vue, opts = {}) {

@@ -19,7 +19,7 @@
     const prefixCls = 'lkui-switch';
 
     export default {
-        name: 'iSwitch',
+        name: 'lkSwitch',
         mixins: [ Emitter ],
         props: {
             value: {

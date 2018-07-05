@@ -296,170 +296,170 @@
 <!--<template>-->
     <!--<div id="app">-->
         <!--<input><br>-->
-        <!--<i-select-->
+        <!--<lk-select-->
             <!--v-model="model1"-->
             <!--style="width:200px"-->
         <!--&gt;-->
-            <!--<i-option-->
+            <!--<lk-option-->
                 <!--v-for="item in cityList"-->
                 <!--:value="item.value"-->
                 <!--:key="item.value"-->
-            <!--&gt;{{item.label}}</i-option>-->
-        <!--</i-select>-->
+            <!--&gt;{{item.label}}</lk-option>-->
+        <!--</lk-select>-->
         <!--<br>-->
-        <!--<i-select-->
+        <!--<lk-select-->
             <!--v-model="model2"-->
             <!--size="small"-->
             <!--style="width:100px"-->
         <!--&gt;-->
-            <!--<i-option-->
+            <!--<lk-option-->
                 <!--v-for="item in cityList"-->
                 <!--:value="item.value"-->
                 <!--:key="item.value"-->
-            <!--&gt;{{item.label}}</i-option>-->
-        <!--</i-select>-->
-        <!--<i-select-->
+            <!--&gt;{{item.label}}</lk-option>-->
+        <!--</lk-select>-->
+        <!--<lk-select-->
             <!--v-model="model3"-->
             <!--style="width:100px"-->
         <!--&gt;-->
-            <!--<i-option-->
+            <!--<lk-option-->
                 <!--v-for="item in cityList"-->
                 <!--:value="item.value"-->
                 <!--:key="item.value"-->
-            <!--&gt;{{item.label}}</i-option>-->
-        <!--</i-select>-->
-        <!--<i-select-->
+            <!--&gt;{{item.label}}</lk-option>-->
+        <!--</lk-select>-->
+        <!--<lk-select-->
             <!--v-model="model4"-->
             <!--size="large"-->
             <!--style="width:100px"-->
         <!--&gt;-->
-            <!--<i-option-->
+            <!--<lk-option-->
                 <!--v-for="item in cityList"-->
                 <!--:value="item.value"-->
                 <!--:key="item.value"-->
-            <!--&gt;{{item.label}}</i-option>-->
-        <!--</i-select>-->
+            <!--&gt;{{item.label}}</lk-option>-->
+        <!--</lk-select>-->
         <!--<br>-->
-        <!--<i-select-->
+        <!--<lk-select-->
             <!--v-model="model5"-->
             <!--disabled-->
             <!--style="width:200px"-->
         <!--&gt;-->
-            <!--<i-option-->
+            <!--<lk-option-->
                 <!--v-for="item in cityList"-->
                 <!--:value="item.value"-->
                 <!--:key="item.value"-->
-            <!--&gt;{{item.label}}</i-option>-->
-        <!--</i-select>-->
-        <!--<i-select-->
+            <!--&gt;{{item.label}}</lk-option>-->
+        <!--</lk-select>-->
+        <!--<lk-select-->
             <!--v-model="model6"-->
             <!--style="width:200px"-->
         <!--&gt;-->
-            <!--<i-option value="beijing">New York</i-option>-->
-            <!--<i-option value="shanghai" disabled>London</i-option>-->
-            <!--<i-option value="shenzhen">Sydney</i-option>-->
-        <!--</i-select>-->
+            <!--<lk-option value="beijing">New York</lk-option>-->
+            <!--<lk-option value="shanghai" disabled>London</lk-option>-->
+            <!--<lk-option value="shenzhen">Sydney</lk-option>-->
+        <!--</lk-select>-->
         <!--<br>-->
-        <!--<i-select-->
+        <!--<lk-select-->
             <!--v-model="model8"-->
             <!--clearable-->
             <!--style="width:200px"-->
         <!--&gt;-->
-            <!--<i-option-->
+            <!--<lk-option-->
                 <!--v-for="item in cityList"-->
                 <!--:value="item.value"-->
                 <!--:key="item.value"-->
-            <!--&gt;{{item.label}}</i-option>-->
-        <!--</i-select>-->
+            <!--&gt;{{item.label}}</lk-option>-->
+        <!--</lk-select>-->
         <!--<br>-->
-        <!--<i-select-->
+        <!--<lk-select-->
             <!--v-model="model7"-->
             <!--style="width:200px"-->
         <!--&gt;-->
             <!--<option-group label="Hot Cities">-->
-                <!--<i-option-->
+                <!--<lk-option-->
                     <!--v-for="item in cityList1"-->
                     <!--:value="item.value"-->
                     <!--:key="item.value"-->
-                <!--&gt;{{item.label}}</i-option>-->
+                <!--&gt;{{item.label}}</lk-option>-->
             <!--</option-group>-->
             <!--<option-group label="Other Cities">-->
-                <!--<i-option-->
+                <!--<lk-option-->
                     <!--v-for="item in cityList2"-->
                     <!--:value="item.value"-->
                     <!--:key="item.value"-->
-                <!--&gt;{{item.label}}</i-option>-->
+                <!--&gt;{{item.label}}</lk-option>-->
             <!--</option-group>-->
-        <!--</i-select>-->
+        <!--</lk-select>-->
         <!--<br>-->
-        <!--<i-select-->
+        <!--<lk-select-->
             <!--v-model="model9"-->
             <!--style="width:200px"-->
         <!--&gt;-->
-            <!--<i-option value="New York" label="New York">-->
+            <!--<lk-option value="New York" label="New York">-->
                 <!--<span>New York</span>-->
                 <!--<span style="float:right;color:#ccc">America</span>-->
-            <!--</i-option>-->
-            <!--<i-option value="London" label="London">-->
+            <!--</lk-option>-->
+            <!--<lk-option value="London" label="London">-->
                 <!--<span>London</span>-->
                 <!--<span style="float:right;color:#ccc">U.K.</span>-->
-            <!--</i-option>-->
-            <!--<i-option value="Sydney" label="Sydney">-->
+            <!--</lk-option>-->
+            <!--<lk-option value="Sydney" label="Sydney">-->
                 <!--<span>Sydney</span>-->
                 <!--<span style="float:right;color:#ccc">Australian</span>-->
-            <!--</i-option>-->
-        <!--</i-select>-->
+            <!--</lk-option>-->
+        <!--</lk-select>-->
         <!--<br>-->
         <!--<div>here</div>-->
-        <!--<i-select-->
+        <!--<lk-select-->
             <!--v-model="model10"-->
             <!--multiple-->
             <!--style="width:260px"-->
         <!--&gt;-->
-            <!--<i-option-->
+            <!--<lk-option-->
                 <!--v-for="item in cityList"-->
                 <!--:value="item.value"-->
                 <!--:key="item.value"-->
-            <!--&gt;{{item.label}}</i-option>-->
-        <!--</i-select>-->
+            <!--&gt;{{item.label}}</lk-option>-->
+        <!--</lk-select>-->
         <!--<br>-->
         <!--<row>-->
-            <!--<i-col-->
+            <!--<lk-col-->
                 <!--span="12"-->
                 <!--style="padding-right:10px"-->
             <!--&gt;-->
-                <!--<i-select-->
+                <!--<lk-select-->
                     <!--v-model="model11"-->
                     <!--filterable-->
                 <!--&gt;-->
-                    <!--<i-option-->
+                    <!--<lk-option-->
                         <!--v-for="item in cityList"-->
                         <!--:value="item.value"-->
                         <!--:key="item.value"-->
-                    <!--&gt;{{item.label}}</i-option>-->
-                <!--</i-select>-->
-            <!--</i-col>-->
-            <!--<i-col span="12">-->
-                <!--<i-select-->
+                    <!--&gt;{{item.label}}</lk-option>-->
+                <!--</lk-select>-->
+            <!--</lk-col>-->
+            <!--<lk-col span="12">-->
+                <!--<lk-select-->
                     <!--v-model="model12"-->
                     <!--filterable-->
                     <!--multiple-->
                 <!--&gt;-->
-                    <!--<i-option-->
+                    <!--<lk-option-->
                         <!--v-for="item in cityList"-->
                         <!--:value="item.value"-->
                         <!--:key="item.value"-->
-                    <!--&gt;{{item.label}}</i-option>-->
-                <!--</i-select>-->
-            <!--</i-col>-->
+                    <!--&gt;{{item.label}}</lk-option>-->
+                <!--</lk-select>-->
+            <!--</lk-col>-->
         <!--</row>-->
         <!--<br>-->
         <!--<row>-->
-            <!--<i-col-->
+            <!--<lk-col-->
                 <!--span="12"-->
                 <!--style="padding-right:10px"-->
             <!--&gt;-->
-                <!--<i-select-->
+                <!--<lk-select-->
                     <!--v-model="model13"-->
                     <!--filterable-->
                     <!--remote-->
@@ -467,15 +467,15 @@
                     <!--:remote-method="remoteMethod1"-->
                     <!--:loading="loading1"-->
                 <!--&gt;-->
-                    <!--<i-option-->
+                    <!--<lk-option-->
                         <!--v-for="(option, index) in options1"-->
                         <!--:value="option.value"-->
                         <!--:key="index"-->
-                    <!--&gt;{{option.label}}</i-option>-->
-                <!--</i-select>-->
-            <!--</i-col>-->
-            <!--<i-col span="12">-->
-                <!--<i-select-->
+                    <!--&gt;{{option.label}}</lk-option>-->
+                <!--</lk-select>-->
+            <!--</lk-col>-->
+            <!--<lk-col span="12">-->
+                <!--<lk-select-->
                     <!--v-model="model14"-->
                     <!--multiple-->
                     <!--filterable-->
@@ -483,13 +483,13 @@
                     <!--clearable-->
                     <!--:remote-method="remoteMethod2"-->
                     <!--:loading="loading2">-->
-                    <!--<i-option-->
+                    <!--<lk-option-->
                         <!--v-for="(option, index) in options2"-->
                         <!--:value="option.value"-->
                         <!--:key="index"-->
-                    <!--&gt;{{option.label}}</i-option>-->
-                <!--</i-select>-->
-            <!--</i-col>-->
+                    <!--&gt;{{option.label}}</lk-option>-->
+                <!--</lk-select>-->
+            <!--</lk-col>-->
         <!--</row>-->
     <!--</div>-->
 <!--</template>-->

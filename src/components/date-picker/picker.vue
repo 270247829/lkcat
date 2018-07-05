@@ -2,7 +2,7 @@
     <div :class="[prefixCls]" v-clickoutside="handleClose">
         <div ref="reference" :class="[prefixCls + '-rel']">
             <slot>
-                <i-input
+                <lk-input
                     :key="forceInputRerender"
                     :element-id="elementId"
                     :class="[prefixCls + '-editor']"
@@ -20,7 +20,7 @@
                     @mouseleave.native="handleInputMouseleave"
 
                     :icon="iconType"
-                ></i-input>
+                ></lk-input>
             </slot>
         </div>
         <transition name="transition-drop">

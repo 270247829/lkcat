@@ -4,7 +4,7 @@
 <script>
     const prefixCls = 'lkui-layout';
     export default {
-        name: 'Header',
+        name: 'lkHeader',
         computed: {
             wrapClasses () {
                 return `${prefixCls}-header`;

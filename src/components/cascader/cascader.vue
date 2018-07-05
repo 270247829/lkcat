@@ -3,7 +3,7 @@
         <div :class="[prefixCls + '-rel']" @click="toggleOpen" ref="reference">
             <input type="hidden" :name="name" :value="currentValue">
             <slot>
-                <i-input
+                <lk-input
                     :element-id="elementId"
                     ref="input"
                     :readonly="!filterable"
@@ -11,7 +11,7 @@
                     :value="displayInputRender"
                     @on-change="handleInput"
                     :size="size"
-                    :placeholder="inputPlaceholder"></i-input>
+                    :placeholder="inputPlaceholder"></lk-input>
                 <div
                     :class="[prefixCls + '-label']"
                     v-show="filterable && query === ''"

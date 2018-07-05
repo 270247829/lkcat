@@ -187,12 +187,12 @@ describe('Select.vue', () => {
       vm = createVue({
         template: `
           <div>
-            <i-select v-model="modelA" multiple style="width:260px">
-              <i-option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</i-option>
-            </i-select>
-            <i-select v-model="modelB" multiple style="width:260px">
-              <i-option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</i-option>
-            </i-select>
+            <lk-select v-model="modelA" multiple style="width:260px">
+              <lk-option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</lk-option>
+            </lk-select>
+            <lk-select v-model="modelB" multiple style="width:260px">
+              <lk-option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</lk-option>
+            </lk-select>
           </div>
         `,
         data() {

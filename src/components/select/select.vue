@@ -63,7 +63,7 @@
     const prefixCls = 'lkui-select';
 
     export default {
-        name: 'iSelect',
+        name: 'lkSelect',
         mixins: [ Emitter, Locale ],
         components: { Icon, Drop },
         directives: { clickoutside, TransferDom },

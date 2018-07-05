@@ -1,8 +1,8 @@
 <template>
     <div>
-        <i-button @click.native="start">Start</i-button>
-        <i-button @click.native="finish">Finish</i-button>
-        <i-button @click.native="error">Error</i-button>
+        <Button @click.native="start">Start</Button>
+        <Button @click.native="finish">Finish</Button>
+        <Button @click.native="error">Error</Button>
     </div>
 </template>
 <script>
