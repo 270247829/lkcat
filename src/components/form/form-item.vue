@@ -106,7 +106,7 @@
             },
             // form() {
             //    let parent = this.$parent;
-            //    while (parent.$options.name !== 'iForm') {
+            //    while (parent.$options.name !== 'lkForm') {
             //        parent = parent.$parent;
             //    }
             //    return parent;
@@ -223,7 +223,7 @@
         },
         mounted () {
             if (this.prop) {
-                this.dispatch('iForm', 'on-form-item-add', this);
+                this.dispatch('lkForm', 'on-form-item-add', this);
 
                 Object.defineProperty(this, 'initialValue', {
                     value: this.fieldValue
@@ -244,7 +244,7 @@
             }
         },
         beforeDestroy () {
-            this.dispatch('iForm', 'on-form-item-remove', this);
+            this.dispatch('lkForm', 'on-form-item-remove', this);
         }
     };
 </script>
