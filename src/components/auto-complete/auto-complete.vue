@@ -35,7 +35,7 @@
     </lk-select>
 </template>
 <script>
-    import iSelect from '../select/select.vue';
+    import lkSelect from '../select/select.vue';
     import iOption from '../select/option.vue';
     import iInput from '../input/input.vue';
     import { oneOf } from '../../utils/assist';
@@ -44,7 +44,7 @@
     export default {
         name: 'AutoComplete',
         mixins: [ Emitter ],
-        components: { iSelect, iOption, iInput },
+        components: { lkSelect, iOption, iInput },
         props: {
             value: {
                 type: [String, Number],

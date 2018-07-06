@@ -55,7 +55,7 @@
                     return false;
                 }
 
-                this.dispatch('iSelect', 'on-select-selected', this.value);
+                this.dispatch('lkSelect', 'on-select-selected', this.value);
             },
             blur () {
                 this.isFocus = false;
@@ -77,15 +77,15 @@
         },
         mounted () {
             this.updateSearchLabel();
-            this.dispatch('iSelect', 'append');
+            this.dispatch('lkSelect', 'append');
             this.$on('on-select-close', this.onSelectClose);
             this.$on('on-query-change',this.onQueryChange);
 
-            const Select = findComponentUpward(this, 'iSelect');
+            const Select = findComponentUpward(this, 'lkSelect');
             if (Select) this.autoComplete = Select.autoComplete;
         },
         beforeDestroy () {
-            this.dispatch('iSelect', 'remove');
+            this.dispatch('lkSelect', 'remove');
             this.$off('on-select-close', this.onSelectClose);
             this.$off('on-query-change',this.onQueryChange);
         }

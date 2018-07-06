@@ -19,7 +19,7 @@
     </div>
 </template>
 <script>
-    import iSelect from '../../components/select/select.vue';
+    import lkSelect from '../../components/select/select.vue';
     import iOption from '../../components/select/option.vue';
     import Locale from '../../mixins/locale';
 
@@ -32,7 +32,7 @@
     export default {
         name: 'PageOption',
         mixins: [ Locale ],
-        components: { iSelect, iOption },
+        components: { lkSelect, iOption },
         props: {
             pageSizeOpts: Array,
             showSizer: Boolean,

@@ -63,7 +63,7 @@
                     });
                 }
                 // set a height for parent is Modal and Select's width is 100%
-                if (this.$parent.$options.name === 'iSelect') {
+                if (this.$parent.$options.name === 'lkSelect') {
                     this.width = parseInt(getStyle(this.$parent.$el, 'width'));
                 }
             },
