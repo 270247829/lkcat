@@ -9,7 +9,7 @@
                 :class="getCellCls(cell)"
                 v-for="(cell, i) in readCells"
                 :key="String(cell.date) + i"
-                @click="handleClick(cell)"
+                @click="handleClick(cell,timePickerOptions)"
                 @mouseenter="handleMouseMove(cell)"
         >
             <em>{{ cell.desc }}</em>
@@ -33,6 +33,10 @@
             showWeekNumbers: {
                 type: Boolean,
                 default: false
+            },
+            timePickerOptions: {
+                default: () => ({}),
+                type: Object,
             },
         },
         data () {
@@ -74,7 +78,8 @@
                 const disabledTestFn = typeof this.disabledDate === 'function' && this.disabledDate;
 
                 return this.calendar(tableYear, tableMonth, (cell) => {
-                    const time = cell.date && clearHours(cell.date);
+                    // const time = cell.date && clearHours(cell.date);
+                    const time = cell.date;
                     const dateIsInCurrentMonth = cell.date && tableMonth === cell.date.getMonth();
                     return {
                         ...cell,

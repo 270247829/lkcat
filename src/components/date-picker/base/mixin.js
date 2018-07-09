@@ -1,5 +1,5 @@
 
-import {clearHours} from '../util';
+import {clearHours,setHours} from '../util';
 
 export default {
     props: {
@@ -36,10 +36,21 @@ export default {
         },
     },
     methods: {
-        handleClick (cell) {
+        handleClick (cell,timesOptions) {
+            let hours,minutes,seconds;
+            if(timesOptions.value){
+                hours = timesOptions.value[0];
+                minutes = timesOptions.value[1];
+                seconds = timesOptions.value[2];
+            }else{
+                let currentTime = new Date();
+                hours = currentTime.getHours();
+                minutes = currentTime.getMinutes();
+                seconds = currentTime.getSeconds();
+            }
             if (cell.disabled || cell.type === 'weekLabel') return;
-            const newDate = new Date(clearHours(cell.date));
-
+            // const newDate = new Date(clearHours(cell.date));
+            const newDate = new Date(setHours(cell.date,hours,minutes,seconds));
             this.$emit('on-pick', newDate);
             this.$emit('on-pick-click');
         },

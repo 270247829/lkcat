@@ -39,6 +39,7 @@
                     :value="dates"
                     :selection-mode="selectionMode"
                     :disabled-date="disabledDate"
+                    :time-picker-options="timePickerOptions"
                     @on-pick="panelPickerHandlers"
                     @on-pick-click="handlePickClick"
                 ></component>
@@ -52,6 +53,7 @@
                     :time-disabled="timeDisabled"
                     :disabled-date="disabledDate"
                     v-bind="timePickerOptions"
+                    :time-picker-options="timePickerOptions"
                     @on-pick="handlePick"
                     @on-pick-click="handlePickClick"
                     @on-pick-clear="handlePickClear"
@@ -193,7 +195,6 @@
                 if (selectionMode === 'year') value = new Date(value.getFullYear(), 0, 1);
                 else if (selectionMode === 'month') value = new Date(panelDate.getFullYear(), value.getMonth(), 1);
                 else value = new Date(value);
-
                 this.dates = [value];
                 this.$emit('on-pick', value);
             },

@@ -251,7 +251,8 @@
     <div style="width: 500px;margin: 100px;">
         <Row>
             <Col span="12">
-            <DatePicker type="datetime" v-model="date" format="yyyy-MM-dd HH:mm:ss" show-week-numbers placeholder="Select date" style="width: 200px" ></DatePicker>
+            <DatePicker type="datetime" v-model="date" format="yyyy-MM-dd HH:mm:ss" :time-picker-options="{value:['23','59','59']}" show-week-numbers placeholder="Select date" style="width: 200px" >
+            </DatePicker>
                 <br>
                 <TimePicker type="time" placeholder="Select time" style="width: 168px"></TimePicker>
             </Col>
@@ -276,15 +277,24 @@
                     endTime:''
                 },
                 options3: {
-                    disabledDate:date=> {
-                    //this.formItem.startTime = formatDate(this.formItem.startTime,'yyyy-MM-dd hh:mm:ss');
-                    //this.formItem.endTime=formatDate(this.formItem.endTime,'yyyy-MM-dd 23:59:59');
-                    let start=this.formItem.startTime.valueOf();
-
-                        if (!start || !date) {
-                              return false;
-                            }
-                        return date && (date.valueOf()+86300000) < start;
+                    disabledDate:endValue=> {
+                        //this.formItem.startTime = formatDate(this.formItem.startTime,'yyyy-MM-dd hh:mm:ss');
+                        //this.formItem.endTime=formatDate(this.formItem.endTime,'yyyy-MM-dd 23:59:59');
+                        // let start=this.formItem.startTime.valueOf();
+                        //
+                        //     if (!start || !date) {
+                        //           return false;
+                        //         }
+                        //     return date && (date.valueOf()+86300000) < start;
+                        // }
+                        const startValue = new Date(this.formItem.startTime);
+                        console.log(endValue +","+ endValue.valueOf());
+                        console.log(startValue +","+startValue.valueOf());
+                        if (!endValue || !startValue) {
+                            return false;
+                        }
+                        console.log(endValue.valueOf() <= startValue.valueOf());
+                        return endValue.valueOf() <= startValue.valueOf();
                     }
                 },
                 options4: {
@@ -295,8 +305,12 @@
                     //         }
                     //     return date && date.valueOf() > end;
                     // }
-                    disabledDate:date=>{
-                            return date && date.valueOf() < Date.now() - 86400000;
+                    disabledDate:startValue=>{
+                        const endValue = new Date(this.formItem.endTime);
+                        if (!startValue || !endValue) {
+                            return false;
+                        }
+                        return startValue.valueOf() >= endValue.valueOf();
                     }
                 }
             }

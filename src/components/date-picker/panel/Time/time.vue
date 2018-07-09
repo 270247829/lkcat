@@ -70,6 +70,10 @@
                 type: Array,
                 required: true
             },
+            timePickerOptions: {
+                default: () => ({}),
+                type: Object,
+            }
         },
         data () {
             return {
@@ -91,6 +95,9 @@
                 return `${date.getFullYear()}${tYear} ${tMonth}`;
             },
             timeSlots(){
+                // if(this.timePickerOptions && this.timePickerOptions.value){
+                //     return this.timePickerOptions.value;
+                // }
                 if (!this.value[0]) return [];
                 return ['getHours', 'getMinutes', 'getSeconds'].map(slot => this.date[slot]());
             },

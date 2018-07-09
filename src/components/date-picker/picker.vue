@@ -67,7 +67,7 @@
 <script>
 
 
-    import iInput from '../../components/input/input.vue';
+    import lkInput from '../../components/input/input.vue';
     import Drop from '../../components/select/dropdown.vue';
     import clickoutside from '../../directives/clickoutside';
     import TransferDom from '../../directives/transfer-dom';
@@ -82,7 +82,7 @@
     export default {
         name: 'CalendarPicker',
         mixins: [ Emitter ],
-        components: { iInput, Drop },
+        components: { lkInput, Drop },
         directives: { clickoutside, TransferDom },
         props: {
             format: {

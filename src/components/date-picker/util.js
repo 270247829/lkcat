@@ -20,6 +20,12 @@ export const clearHours = function (time) {
     return cloneDate.getTime();
 };
 
+export const setHours = function (time,hour,minute,second) {
+    const cloneDate = new Date(time);
+    cloneDate.setHours(hour, minute, second, 0);
+    return cloneDate.getTime();
+};
+
 export const isInRange = (time, a, b) => {
     if (!a || !b) return false;
     const [start, end] = [a, b].sort();
