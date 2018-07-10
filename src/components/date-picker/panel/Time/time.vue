@@ -113,11 +113,13 @@
                     const disabled = ['Hours', 'Minutes', 'Seconds'].map(type => this[`disabled${type}`]);
                     const disabledHMS = disabled.map((preDisabled, j) => {
                         const slot = slots[j];
-                        const toDisable = preDisabled;
+                        const toDisable = [];
                         for (let i = 0; i < slot; i+= (this.steps[j] || 1)){
                             const hms = this.timeSlots.map((slot, x) => x === j ? i : slot);
                             const testDateTime = mergeDateHMS(this.date, ...hms);
-                            if (this.disabledDate(testDateTime, true)) toDisable.push(i);
+                            if (this.disabledDate(testDateTime, true)) {
+                                toDisable.push(i);
+                            }
                         }
                         return toDisable.filter(unique);
                     });
@@ -136,12 +138,10 @@
         },
         methods: {
             handleChange (date, emit = true) {
-
                 const newDate = new Date(this.date);
                 Object.keys(date).forEach(
                     type => newDate[`set${capitalize(type)}`](date[type])
                 );
-
                 if (emit) this.$emit('on-pick', newDate, true);
             },
         },

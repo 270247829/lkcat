@@ -261,13 +261,14 @@
             </Col>
             <Button @click="c">asdsad</Button>
 
-            <DatePicker v-model="formItem.startTime"  :options="options4" type="datetime"  placeholder="请选择开始时间" style="width: 158px;margin-left:10px;" ></DatePicker>
+            <DatePicker v-model="formItem.startTime" :options="startRule" type="datetime"  placeholder="请选择开始时间" style="width: 158px;margin-left:10px;" ></DatePicker>
             <span>-</span>
-            <DatePicker v-model="formItem.endTime"  :options="options3" type="datetime" placeholder="请选择结束时间" style="width: 158px;" format="yyyy-MM-dd HH:mm:ss" ></DatePicker>
+            <DatePicker v-model="formItem.endTime" :options="endRule" type="datetime" placeholder="请选择结束时间" style="width: 158px;" ></DatePicker>
         </Row>
     </div>
 </template>
 <script>
+    import {formatDate} from '@/libs/date.js';
     export default {
         data () {
             return {
@@ -276,48 +277,30 @@
                     startTime:'',
                     endTime:''
                 },
-                options3: {
-                    disabledDate:endValue=> {
-                        //this.formItem.startTime = formatDate(this.formItem.startTime,'yyyy-MM-dd hh:mm:ss');
-                        //this.formItem.endTime=formatDate(this.formItem.endTime,'yyyy-MM-dd 23:59:59');
-                        // let start=this.formItem.startTime.valueOf();
-                        //
-                        //     if (!start || !date) {
-                        //           return false;
-                        //         }
-                        //     return date && (date.valueOf()+86300000) < start;
-                        // }
-                        const startValue = new Date(this.formItem.startTime);
-                        console.log(endValue +","+ endValue.valueOf());
-                        console.log(startValue +","+startValue.valueOf());
-                        if (!endValue || !startValue) {
+                startRule: {
+                    disabledDate:startDate=>{
+                        startDate = formatDate(startDate,'yyyy-MM-dd hh:mm:ss');
+                        let endDate = this.formItem.endTime.valueOf();
+                        if (!startDate || !endDate) {
                             return false;
                         }
-                        console.log(endValue.valueOf() <= startValue.valueOf());
-                        return endValue.valueOf() <= startValue.valueOf();
+                        return startDate.valueOf() > endDate.valueOf();
                     }
                 },
-                options4: {
-                    // disabledDate:date=> {
-                    //     let end=this.formItem.endTime.valueOf();
-                    //     if (!end || !date) {
-                    //             return false;
-                    //         }
-                    //     return date && date.valueOf() > end;
-                    // }
-                    disabledDate:startValue=>{
-                        const endValue = new Date(this.formItem.endTime);
-                        if (!startValue || !endValue) {
+                endRule: {
+                    disabledDate:endDate=> {
+                        endDate = formatDate(endDate,'yyyy-MM-dd hh:mm:ss');
+                        let start= this.formItem.startTime.valueOf();
+                        if (!start || !endDate) {
                             return false;
                         }
-                        return startValue.valueOf() >= endValue.valueOf();
+                        return endDate && endDate.valueOf() < start;
                     }
                 }
             }
         },
         methods:{
             c(){
-                 console.log(this.date);
             }
         }
     }

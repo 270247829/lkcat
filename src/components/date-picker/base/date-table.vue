@@ -17,7 +17,7 @@
     </div>
 </template>
 <script>
-    import { clearHours, isInRange } from '../util';
+    import { clearHours, isInRange,setHours } from '../util';
     import Locale from '../../../mixins/locale';
     import jsCalendar from 'js-calendar';
 
@@ -78,14 +78,15 @@
                 const disabledTestFn = typeof this.disabledDate === 'function' && this.disabledDate;
 
                 return this.calendar(tableYear, tableMonth, (cell) => {
-                    // const time = cell.date && clearHours(cell.date);
-                    const time = cell.date;
+                    // cell.date = new Date(setHours(cell.date,23,59,59));
+                    const time = cell.date && clearHours(cell.date);
+                    // const time = cell.date;
                     const dateIsInCurrentMonth = cell.date && tableMonth === cell.date.getMonth();
                     return {
                         ...cell,
                         type: time === today ? 'today' : cell.type,
                         selected: dateIsInCurrentMonth && selectedDays.includes(time),
-                        disabled: (cell.date && disabledTestFn) && disabledTestFn(new Date(time)),
+                        disabled: (cell.date && disabledTestFn) && disabledTestFn(new Date(setHours(new Date(time),23,59,59))),
                         range: dateIsInCurrentMonth && isRange && isInRange(time, rangeStart, rangeEnd),
                         start: dateIsInCurrentMonth && isRange && time === minDay,
                         end: dateIsInCurrentMonth && isRange && time === maxDay
