@@ -9,11 +9,16 @@
         props: {
             type: String,
             size: [Number, String],
-            color: String
+            color: String,
+            custom:String
         },
         computed: {
             classes () {
-                return `${prefixCls} ${prefixCls}-${this.type}`;
+                if(this.custom) {
+                    return `${prefixCls} ${this.custom} icon-${this.type}`;
+                }else{
+                    return `${prefixCls} ${prefixCls}-${this.type}`;
+                }
             },
             styles () {
                 let style = {};

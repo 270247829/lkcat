@@ -66,6 +66,8 @@ nav {
                 <li><router-link to="/divider">Divider</router-link></li>
                 <li><router-link to="/tree-select">TreeSelect</router-link></li>
                 <li><router-link to="/more-panel">MorePanel</router-link></li>
+                <li><router-link to="/icon">Icon</router-link></li>
+
             </ul>
         </nav>
         <router-view></router-view>

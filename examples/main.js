@@ -218,6 +218,10 @@ const router = new VueRouter({
         {
             path: '/more-panel',
             component: (resolve) => require(['./routers/more-panel.vue'], resolve)
+        },
+        {
+            path: '/icon',
+            component: (resolve) => require(['./routers/icon.vue'], resolve)
         }
     ]
 });
