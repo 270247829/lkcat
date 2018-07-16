@@ -21,5 +21,9 @@ gulp.task('fonts', function () {
     gulp.src('../src/styles/common/iconfont/fonts/*.*')
         .pipe(gulp.dest('../dist/styles/fonts'));
 });
+gulp.task('custom', function () {
+    gulp.src('../src/styles/common/iconfont/custom/*.*')
+        .pipe(gulp.dest('../dist/styles/custom'));
+});
 
-gulp.task('default', ['css', 'fonts']);
+gulp.task('default', ['css', 'fonts','custom']);
