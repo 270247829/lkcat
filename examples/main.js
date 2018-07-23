@@ -222,6 +222,10 @@ const router = new VueRouter({
         {
             path: '/icon',
             component: (resolve) => require(['./routers/icon.vue'], resolve)
+        },
+        {
+            path: '/drawer',
+            component: (resolve) => require(['./routers/drawer.vue'], resolve)
         }
     ]
 });

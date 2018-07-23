@@ -1,0 +1,157 @@
+@drawer-prefix-cls: ~"@{css-prefix}drawer";
+@confirm-prefix-cls: ~"@{css-prefix}drawer-confirm";
+
+.@{drawer-prefix-cls} {
+    position: absolute;
+    outline: none;
+    top: 0px;
+    height: 100%;
+    webkit-box-shadow: -2px 0 8px rgba(0,0,0,.15);
+    box-shadow: -2px 0 8px rgba(0,0,0,.15);
+
+    &-right {
+        right: 0px;
+    }
+
+    &-left {
+        left: 0px;
+    }
+
+    &-hidden {
+        display: none !important;
+    }
+
+    &-wrap {
+        position: fixed;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: @zindex-drawer;
+        -webkit-overflow-scrolling: touch;
+        outline: 0;
+    }
+
+    &-wrap-hidden-mask {
+        position: unset;
+    }
+
+    &-wrap * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    &-mask {
+        .drawMask;
+    }
+
+    &-content {
+        height: 100%;
+        position: relative;
+        background-color: #fff;
+        border: 0;
+        //border-radius: @border-radius-base;
+        background-clip: padding-box;
+    }
+
+    &-header {
+        .content-header;
+    }
+
+    &-close {
+        .content-close(1px, 31px);
+    }
+
+    &-body {
+        padding: 16px;
+        font-size: 14px;
+        line-height: 1.5;
+        word-wrap: break-word;
+    }
+
+    &-footer {
+        border-top: 1px solid @border-color-split;
+        padding: 12px 18px 12px 18px;
+        text-align: right;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        button + button {
+            margin-left: 8px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .@{drawer-prefix-cls} {
+        width: auto !important;
+        margin: 10px;
+    }
+    .vertical-center-drawer {
+        .@{drawer-prefix-cls} {
+            flex: 1;
+        }
+    }
+}
+
+.@{confirm-prefix-cls} {
+    padding: 0 4px;
+    &-head {
+
+        &-title {
+            display: inline-block;
+            font-size: @font-size-base;
+            color: @title-color;
+            font-weight: 700;
+        }
+    }
+
+    &-body{
+        margin-top: 6px;
+        padding-left: 48px;
+        padding-top: 18px;
+        font-size: @font-size-small;
+        color: @text-color;
+        position: relative;
+
+        &-render{
+            margin: 0;
+            padding: 0;
+        }
+
+        &-icon {
+            font-size: 36px;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            &-info {
+                color: @primary-color;
+            }
+            &-success {
+                color: @success-color;
+            }
+            &-warning {
+                color: @warning-color;
+            }
+            &-error {
+                color: @error-color;
+            }
+            &-confirm {
+                color: @warning-color;
+            }
+        }
+    }
+
+    &-footer{
+        margin-top: 40px;
+        text-align: right;
+
+        button + button {
+            margin-left: 8px;
+            margin-bottom: 0;
+        }
+    }
+}

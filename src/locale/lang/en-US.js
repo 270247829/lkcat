@@ -74,6 +74,10 @@ const lang = {
             okText: 'OK',
             cancelText: 'Cancel'
         },
+        drawer: {
+            okText: 'OK',
+            cancelText: 'Cancel'
+        },
         poptip: {
             okText: 'OK',
             cancelText: 'Cancel'

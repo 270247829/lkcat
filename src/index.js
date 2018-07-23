@@ -55,6 +55,7 @@ import List from './components/list';
 import Divider from './components/divider';
 import TreeSelect from './components/tree-select';
 import MorePanel from './components/more-panel';
+import Drawer from './components/drawer';
 
 const components = {
     Affix,
@@ -129,7 +130,8 @@ const components = {
     ListItem:List.Item,
     Divider,
     TreeSelect,
-    MorePanel
+    MorePanel,
+    Drawer
 };
 
 const lkcat = {

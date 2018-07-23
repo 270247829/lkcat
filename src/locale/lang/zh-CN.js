@@ -74,6 +74,10 @@ const lang = {
             okText: '确定',
             cancelText: '取消'
         },
+        drawer: {
+            okText: '确定',
+            cancelText: '取消'
+        },
         poptip: {
             okText: '确定',
             cancelText: '取消'
