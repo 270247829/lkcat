@@ -68,6 +68,7 @@ nav {
                 <li><router-link to="/more-panel">MorePanel</router-link></li>
                 <li><router-link to="/icon">Icon</router-link></li>
                 <li><router-link to="/drawer">Drawer</router-link></li>
+                <li><router-link to="/time">Time</router-link></li>
 
             </ul>
         </nav>

@@ -56,6 +56,8 @@ import Divider from './components/divider';
 import TreeSelect from './components/tree-select';
 import MorePanel from './components/more-panel';
 import Drawer from './components/drawer';
+import Time from './components/time';
+
 
 const components = {
     Affix,
@@ -131,7 +133,8 @@ const components = {
     Divider,
     TreeSelect,
     MorePanel,
-    Drawer
+    Drawer,
+    Time
 };
 
 const lkcat = {

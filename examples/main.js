@@ -226,6 +226,10 @@ const router = new VueRouter({
         {
             path: '/drawer',
             component: (resolve) => require(['./routers/drawer.vue'], resolve)
+        },
+        {
+            path: '/time',
+            component: (resolve) => require(['./routers/time.vue'], resolve)
         }
     ]
 });
