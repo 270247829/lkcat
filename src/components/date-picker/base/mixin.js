@@ -38,7 +38,7 @@ export default {
     methods: {
         handleClick (cell,timesOptions) {
             let hours,minutes,seconds;
-            if(timesOptions.value){
+            if(timesOptions && timesOptions.value){
                 hours = timesOptions.value[0];
                 minutes = timesOptions.value[1];
                 seconds = timesOptions.value[2];
