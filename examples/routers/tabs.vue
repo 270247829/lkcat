@@ -159,7 +159,7 @@
 
 <template>
     <Tabs type="card">
-        <TabPane v-for="tab in tabs" :key="tab" :label="'标签' + tab">标签{{ tab }}</TabPane>
+        <TabPane v-for="tab in tabs" :key="tab" :label="a">标签{{ tab }}</TabPane>
         <Button type="ghost" @click="handleTabsAdd" size="small" slot="extra">增加</Button>
     </Tabs>
 </template>
@@ -173,6 +173,13 @@
         methods: {
             handleTabsAdd () {
                 this.tabs ++;
+            },
+            a (h){
+                return (
+                    <div>
+                    <span>Hello</span><br/> world!
+                    </div>
+                )
             }
         }
     }

@@ -254,7 +254,7 @@
             <DatePicker type="datetime" v-model="date" format="yyyy-MM-dd HH:mm:ss" :time-picker-options="{value:['23','59','59']}" show-week-numbers placeholder="Select date" style="width: 200px" >
             </DatePicker>
                 <br>
-                <TimePicker type="time" placeholder="Select time" style="width: 168px"></TimePicker>
+                <TimePicker format="HH:mm"  v-model="formItem.test" placeholder="请选择开始时间" style="width: 158px;"></TimePicker>
             </Col>
             <Col span="12">
             <DatePicker type="daterange" show-week-numbers placement="bottom-end" placeholder="Select date" style="width: 200px"></DatePicker>
@@ -275,7 +275,8 @@
                 date:'',
                 formItem:{
                     startTime:'',
-                    endTime:''
+                    endTime:'',
+                    test:''
                 },
                 startRule: {
                     disabledDate:startDate=>{
@@ -301,6 +302,7 @@
         },
         methods:{
             c(){
+
             }
         }
     }

@@ -30,7 +30,8 @@
             <slot name="footer"></slot>
         </div>
         <div :class="pageClass" v-if="showPagination">
-            <Page :total="pagination.total" :current="pagination.current" :page-size="pagination.pageSize"
+            <Page :total="pagination.total" :current="pagination.current" :page-size="pagination.pageSize" :size="pagination.size"
+                  :show-total="pagination.showTotal" :simple="pagination.simple"
                   @on-change="changePage"></Page>
         </div>
     </div>

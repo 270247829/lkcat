@@ -213,13 +213,15 @@
                     if(Array.isArray(result)){
                         result = result.map(value => this.formatDate(value));
                     }else{
-                        result = this.formatDate(result);
+                        //console.log(result)
+                        //result = this.formatDate(result);
                     }
                     return result;
                 }
             },
             publicStringValue(){
                 const {formatDate, publicVModelValue, type} = this;
+
                 if (type.match(/^time/)) return publicVModelValue;
                 if (this.multiple) return formatDate(publicVModelValue);
                 return Array.isArray(publicVModelValue) ? publicVModelValue.map(formatDate) : formatDate(publicVModelValue);

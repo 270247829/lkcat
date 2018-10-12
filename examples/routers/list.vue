@@ -49,7 +49,10 @@
                 pagination:{
                     current:1,
                     total:1,
-                    pageSize:8
+                    pageSize:8,
+                    size: "small",
+                    showTotal: true,
+                    simple: true
                 },
                 grid:{
                     column:4,gutter:16
